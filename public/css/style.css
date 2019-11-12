@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 1px solid lightpink;
+}
+
+h4 {
+  color: red;
+}
+
+header > ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
