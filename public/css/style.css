@@ -1,15 +1,80 @@
 * {
   margin: 0;
   padding: 0;
-  outline: 1px solid lightpink;
+  /* outline: 1px solid rgb(151, 207, 119); */
 }
 
-h1 {
-  color: red;
+:root {
+  --color-main: #1EBEB4;
+  --color-grey: #E9E9E9;
+  --color-light_grey: #F7F7F7;
+  --color-white: #FFFFFF;
+  --color-black: #383A3F;
+  --color-red: #EE5744;
+  --color-yellow: #FDB94B;
 }
 
-header > ul {
+body {
+  height: 100vh;
+  background-color: var(--color-grey);
+}
+
+.wrapper {
+  width: 90%;
+  margin-left: 14px;
+}
+
+.crmname {
+  text-align: center;
+}
+
+.pageuser {
+  text-align: end;
+  color: var(--color-main);
+}
+
+.crmname > i {
+  color: var(--color-main);
+}
+
+.allarea {
   display: flex;
-  justify-content: space-around;
-  list-style: none;
+  justify-content: space-between;
+}
+
+.workarea {
+  display: flex;
+  justify-items: left;
+  flex-grow: 1;
+  background-color: var(--color-white);
+}
+
+.menu {
+  width: 98px;
+  background-color: var(--color-black);
+}
+
+.menu > ul > li {
+  text-align: center;
+  color: var(--color-white);
+  height: 85px;
+  box-sizing: border-box;
+  padding-top: 15px;
+}
+
+.menu > ul > li:hover {
+  background-color: var(--color-main);
+}
+
+.menu > ul > li > a {
+  color: var(--color-white);
+}
+
+.mainarea {
+  width: 70%;
+}
+
+.rightside {
+  flex-grow: 1;
+  background-color: var(--color-light_grey);
 }
