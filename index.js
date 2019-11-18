@@ -17,7 +17,7 @@ app.set('views', 'views')
 // eslint-disable-next-line no-process-env
 const PORT = process.env.PORT || 3000
 
-// app.use(express.static('public')) Need to remove???
+app.use(express.static('public'))
 
 app.get('/', function (req, res) {
   res.render('index')
