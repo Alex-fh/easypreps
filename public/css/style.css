@@ -7,6 +7,7 @@
 :root {
   --color-main: #1EBEB4;
   --color-grey: #E9E9E9;
+  --border-grey: #EEEEEE;
   --color-light_grey: #F7F7F7;
   --color-white: #FFFFFF;
   --color-black: #383A3F;
@@ -50,14 +51,14 @@ body {
 }
 
 .menu {
-  width: 98px;
   background-color: var(--color-black);
 }
 
 .menu > ul > li {
   text-align: center;
   color: var(--color-white);
-  height: 85px;
+  width: 98px;
+  height: 86px;
   box-sizing: border-box;
   padding-top: 15px;
 }
@@ -74,7 +75,28 @@ body {
   width: 70%;
 }
 
+.mainarea > h2 {
+  text-align: center;
+  color: var(--color-grey);
+}
+
+.person {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.person > div {
+  width: 40%;
+  outline: 1px solid var(--color-grey);
+}
+
+.person h5 {
+  color: var(--color-main)
+}
+
 .rightside {
   flex-grow: 1;
   background-color: var(--color-light_grey);
+  outline: 1px solid var(--border-grey);
 }

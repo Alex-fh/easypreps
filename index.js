@@ -1,6 +1,7 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-console */
 // const path = require('path')
+const path = require('path')
 const express = require('express')
 const exphbs = require('express-handlebars')
 
@@ -21,6 +22,14 @@ app.use(express.static('public'))
 
 app.get('/', function (req, res) {
   res.render('index')
+})
+
+app.get('/manager', function (req, res) {
+  res.render('manager')
+})
+
+app.get('/newstudent', function (req, res) {
+  res.sendFile(path.join(__dirname, 'views', 'partials', 'newstudent.hbs'))
 })
 
 app.listen(PORT, () => {
