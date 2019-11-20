@@ -95,6 +95,12 @@ body {
   color: var(--color-main)
 }
 
+.student {
+  margin: 3%;
+  padding: 3%;
+  outline: 1px solid var(--color-grey);
+}
+
 .rightside {
   flex-grow: 1;
   background-color: var(--color-light_grey);

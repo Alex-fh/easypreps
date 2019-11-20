@@ -2,8 +2,8 @@
  * new student form insert in .mainarea.
  *
  */
-function newstudent() {
-  fetch('/newstudent')
+function pushtomain(str) {
+  fetch(str)
     .then(res => {
       return res.text()
     })

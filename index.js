@@ -29,7 +29,7 @@ app.get('/manager', function (req, res) {
 })
 
 app.get('/newstudent', function (req, res) {
-  res.sendFile(path.join(__dirname, 'views', 'partials', 'newstudent.hbs'))
+  res.sendFile(path.join(__dirname, 'views', 'forms', 'newstudent.hbs'))
 })
 
 app.listen(PORT, () => {
