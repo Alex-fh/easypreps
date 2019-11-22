@@ -1,9 +1,15 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-console */
 // const path = require('path')
+/* eslint-disable quote-props */
 const path = require('path')
 const express = require('express')
 const exphbs = require('express-handlebars')
+const crmRoutes = require('./routes/crm')
+const adminRoutes = require('./routes/admin')
+const managerRoutes = require('./routes/manager')
+const tutorRoutes = require('./routes/tutor')
+const studentRoutes = require('./routes/student')
 
 const app = express()
 const hbs = exphbs.create({
@@ -19,14 +25,11 @@ app.set('views', 'views')
 const PORT = process.env.PORT || 3000
 
 app.use(express.static('public'))
-
-app.get('/', function (req, res) {
-  res.render('index')
-})
-
-app.get('/manager', function (req, res) {
-  res.render('manager')
-})
+app.use('/', crmRoutes)
+app.use('/admin', adminRoutes)
+app.use('/manager', managerRoutes)
+app.use('/tutor', tutorRoutes)
+app.use('/student', studentRoutes)
 
 app.get('/newstudent', function (req, res) {
   res.sendFile(path.join(__dirname, 'views', 'forms', 'newstudent.hbs'))

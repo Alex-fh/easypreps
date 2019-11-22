@@ -11,7 +11,14 @@
 
       <div class="workarea">  
 
+{{#if isManager}}
 {{> mainareamanager}}
+{{/if}}
+
+{{#if isNewtutor}}
+{{> mainareatutor}}
+{{/if}}
+
 {{> rightside}}
       </div>
     </div>

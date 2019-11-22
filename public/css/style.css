@@ -38,6 +38,11 @@ body {
   color: var(--color-main);
 }
 
+nav {
+  background-color: var(--color-main);
+  padding: 0 9% 0 1%;
+}
+
 .allarea {
   display: flex;
   justify-content: space-between;

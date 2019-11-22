@@ -1,0 +1,41 @@
+   <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Crocodile</a>
+
+        <ul class="right hide-on-med-and-down">
+          {{#if isCrm}}
+          <li class="active"><a href="/">CRM</a></li>
+          {{else}}
+          <li><a href="/">CRM</a></li>
+          {{/if}}
+
+          {{#if isAdmin}}
+          <li class="active"><a href="/admin">Administrator</a></li>
+          {{else}}
+          <li><a href="/admin">Administrator</a></li>
+          {{/if}}
+
+          {{#if isManager}}
+          <li class="active"><a href="/manager">Manager</a></li>
+          {{else}}
+          <li><a href="/manager">Manager</a></li>
+          {{/if}}
+
+          {{#if isTutor}}
+          <li class="active"><a href="/tutor">Tutor</a></li>
+          {{else}}
+          <li><a href="/tutor">Tutor</a></li>
+          {{/if}}
+
+          {{#if isStudent}}
+          <li><a href="/student">Student</a></li>
+          {{else}}
+           <li><a href="/student">Student</a></li>
+          {{/if}}
+          
+        </ul>
+
+      </div>
+    </nav>
+  </div>
