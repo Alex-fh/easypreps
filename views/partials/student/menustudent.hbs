@@ -1,0 +1,63 @@
+      <div class="menu">
+
+        <ul>
+          {{!-- <li onclick="pushtomain('/newstudent')">
+            <a href="#">
+              <i class="small material-icons">child_care</i><br>
+              <span>New student</span>
+            </a>
+          </li> --}}
+
+          {{#if isSendrequest}}
+          <li class="acmenu">
+          {{else}}
+          <li>
+          {{/if}}
+            <a href="/student/sendrequest">
+              <i class="small material-icons">mail_outline</i><br>
+              <span>Send request</span>
+            </a>
+          </li>
+
+          {{#if isCalendar}}
+          <li class="acmenu">
+          {{else}}
+          <li>
+          {{/if}}
+            <a href="/student/calendar">
+              <i class="small material-icons">view_comfy</i><br>
+              <span>Calendar</span>
+            </a>
+          </li>
+
+          {{#if isSummary}}
+          <li class="acmenu">
+          {{else}}
+          <li>
+          {{/if}}
+            <a href="/student/summary">
+              <i class="small material-icons">format_list_numbered</i><br>
+              <span>Summary</span>
+            </a>
+          </li>
+
+          <li>
+          </li>
+
+          <li>
+          </li>
+
+          <li>
+          </li>
+
+          <li>
+          </li>
+
+          <li>
+          </li>
+
+          <li>
+          </li>
+        </ul>
+    
+      </div>

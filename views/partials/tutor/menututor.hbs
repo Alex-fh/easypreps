@@ -1,0 +1,71 @@
+      <div class="menu">
+
+        <ul>
+          {{!-- <li onclick="pushtomain('/newstudent')">
+            <a href="#">
+              <i class="small material-icons">child_care</i><br>
+              <span>New student</span>
+            </a>
+          </li> --}}
+
+          {{#if isGetjob}}
+          <li class="acmenu">
+          {{else}}
+          <li>
+          {{/if}}
+            <a href="/tutor/getjob">
+              <i class="small material-icons">person_add</i><br>
+              <span>Get job</span>
+            </a>
+          </li>
+
+          {{#if isPlanmeeting}}
+          <li class="acmenu">
+          {{else}}
+          <li>
+          {{/if}}
+            <a href="/tutor/planmeeting">
+              <i class="small material-icons">supervisor_account</i><br>
+              <span>Plan meeting</span>
+            </a>
+          </li>
+
+          {{#if isWritereport}}
+          <li class="acmenu">
+          {{else}}
+          <li>
+          {{/if}}
+            <a href="/tutor/writereport">
+              <i class="small material-icons">edit</i><br>
+              <span>Write report</span>
+            </a>
+          </li>
+
+          {{#if isSummary}}
+          <li class="acmenu">
+          {{else}}
+          <li>
+          {{/if}}
+            <a href="/tutor/summary">
+              <i class="small material-icons">format_list_numbered</i><br>
+              <span>Summary</span>
+            </a>
+          </li>
+
+          <li>
+          </li>
+
+          <li>
+          </li>
+
+          <li>
+          </li>
+
+          <li>
+          </li>
+
+          <li>
+          </li>
+        </ul>
+    
+      </div>

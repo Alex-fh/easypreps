@@ -1,3 +1,5 @@
+var instance = M.Tabs.init(document.querySelector('.tabs'));
+
 /**
  * new student form insert in .mainarea.
  *

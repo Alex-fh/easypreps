@@ -1,1 +1,32 @@
-<h1>Admin</h1>
+  <div class="wrapper">
+
+{{> crmname}}
+
+
+    <div class="allarea">
+
+{{> admin/menuadmin}}
+
+    <div class="workarea">  
+
+{{#if isProfile}}
+{{> admin/maaadmin}}
+{{/if}}
+
+{{#if isNewmanager}}
+{{> admin/maanewmanager}}
+{{/if}}
+
+{{#if isManagers}}
+{{> admin/maamanagers}}
+{{/if}}
+
+{{> rightside}}
+
+    </div>
+    
+    </div>
+
+{{> footer}}
+
+  </div>

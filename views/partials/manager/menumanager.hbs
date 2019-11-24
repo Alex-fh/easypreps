@@ -1,56 +1,107 @@
       <div class="menu">
 
         <ul>
-          <li onclick="pushtomain('/newstudent')">
+          {{!-- <li onclick="pushtomain('/newstudent')">
             <a href="#">
               <i class="small material-icons">child_care</i><br>
               <span>New student</span>
             </a>
-          </li>
+          </li> --}}
+
+          {{#if isNewstudent}}
+          <li class="acmenu">
+          {{else}}
           <li>
+          {{/if}}
+            <a href="/manager/newstudent">
+              <i class="small material-icons">child_care</i><br>
+              <span>New student</span>
+            </a>
+          </li>
+
+          {{#if isNewtutor}}
+          <li class="acmenu">
+          {{else}}
+          <li>
+          {{/if}}
             <a href="/manager/newtutor">
               <i class="small material-icons">person</i><br>
               <span>New tutor</span>
             </a>
           </li>
+
+          {{#if isNewjob}}
+          <li class="acmenu">
+          {{else}}
           <li>
-            <a href="#">
+          {{/if}}
+            <a href="/manager/newjob">
               <i class="small material-icons">add_to_queue</i><br>
               <span>Post new job</span>
             </a>
           </li>
+
+          {{#if isMatch}}
+          <li class="acmenu">
+          {{else}}
           <li>
-            <a href="#">
+          {{/if}}
+            <a href="/manager/match">
               <i class="small material-icons">group_add</i><br>
               <span>Match st->tut</span>
             </a>
           </li>
+
+          {{#if isCheck}}
+          <li class="acmenu">
+          {{else}}
           <li>
-            <a href="#">
+          {{/if}}
+            <a href="/manager/check">
               <i class="small material-icons">thumbs_up_down</i><br>
               <span>Check reports</span>
             </a>
           </li>
+
+          {{#if isStudents}}
+          <li class="acmenu">
+          {{else}}
           <li>
-            <a href="#">
+          {{/if}}
+            <a href="/manager/students">
               <i class="small material-icons">people_outline</i><br>
               <span>Students</span>
             </a>
           </li>
+
+          {{#if isTutors}}
+          <li class="acmenu">
+          {{else}}
           <li>
-            <a href="#">
+          {{/if}}
+            <a href="/manager/tutors">
               <i class="small material-icons">people</i><br>
               <span>Tutors</span>
             </a>
           </li>
+
+          {{#if isCalendars}}
+          <li class="acmenu">
+          {{else}}
           <li>
-            <a href="#">
+          {{/if}}
+            <a href="/manager/calendars">
               <i class="small material-icons">view_comfy</i><br>
               <span>Calendars</span>
             </a>
           </li>
+
+          {{#if isReports}}
+          <li class="acmenu">
+          {{else}}
           <li>
-            <a href="#">
+          {{/if}}
+            <a href="/manager/reports">
               <i class="small material-icons">library_books</i><br>
               <span>Reports</span>
             </a>

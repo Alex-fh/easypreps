@@ -1,20 +1,35 @@
       <div class="menu">
 
         <ul>
+
+          {{#if isLogin}}
+          <li class="acmenu">
+          {{else}}
           <li>
-            <a href="#">
+          {{/if}}
+            <a href="/login">
               <i class="small material-icons">system_update_alt</i><br>
               <span>Log in</span>
             </a>
           </li>
+
+          {{#if isRegister}}
+          <li class="acmenu">
+          {{else}}
           <li>
-            <a href="#">
+          {{/if}}
+            <a href="/register">
               <i class="small material-icons">person</i><br>
               <span>Register</span>
             </a>
           </li>
+
+          {{#if isMessage}}
+          <li class="acmenu">
+          {{else}}
           <li>
-            <a href="#">
+          {{/if}}
+            <a href="/message">
               <i class="small material-icons">mail_outline</i><br>
               <span style="font-size: 0.9rem;">Send message</span>
             </a>

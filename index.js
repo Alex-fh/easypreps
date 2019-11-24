@@ -2,7 +2,8 @@
 /* eslint-disable no-console */
 // const path = require('path')
 /* eslint-disable quote-props */
-const path = require('path')
+
+// const path = require('path')
 const express = require('express')
 const exphbs = require('express-handlebars')
 const crmRoutes = require('./routes/crm')
@@ -31,9 +32,11 @@ app.use('/manager', managerRoutes)
 app.use('/tutor', tutorRoutes)
 app.use('/student', studentRoutes)
 
-app.get('/newstudent', function (req, res) {
-  res.sendFile(path.join(__dirname, 'views', 'forms', 'newstudent.hbs'))
-})
+/*
+ * app.get('/newstudent', function (req, res) {
+ *   res.sendFile(path.join(__dirname, 'views', 'forms', 'newstudent.hbs'))
+ * })
+ */
 
 app.listen(PORT, () => {
 	console.log(`Server is on ${PORT} port`)

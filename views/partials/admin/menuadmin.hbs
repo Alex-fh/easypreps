@@ -1,0 +1,55 @@
+      <div class="menu">
+
+        <ul>
+          {{!-- <li onclick="pushtomain('/newstudent')">
+            <a href="#">
+              <i class="small material-icons">child_care</i><br>
+              <span>New student</span>
+            </a>
+          </li> --}}
+
+          {{#if isNewmanager}}
+          <li class="acmenu">
+          {{else}}
+          <li>
+          {{/if}}
+            <a href="/admin/newmanager">
+              <i class="small material-icons">face</i><br>
+              <span>New manager</span>
+            </a>
+          </li>
+
+          {{#if isManagers}}
+          <li class="acmenu">
+          {{else}}
+          <li>
+          {{/if}}
+            <a href="/admin/managers">
+              <i class="small material-icons">people</i><br>
+              <span>Managers</span>
+            </a>
+          </li>
+
+          <li>
+          </li>
+
+          <li>
+          </li>
+
+          <li>
+          </li>
+
+          <li>
+          </li>
+
+          <li>
+          </li>
+
+          <li>
+          </li>
+
+          <li>
+          </li>
+        </ul>
+    
+      </div>

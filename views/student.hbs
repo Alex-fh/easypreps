@@ -1,1 +1,37 @@
-<h1>Student</h1>
+  <div class="wrapper">
+
+{{> crmname}}
+
+
+    <div class="allarea">
+
+{{> student/menustudent}}
+
+    <div class="workarea">  
+
+{{#if isProfile}}
+{{> student/masstudent}}
+{{/if}}
+
+{{#if isSendrequest}}
+{{> student/massendrequest}}
+{{/if}}
+
+{{#if isCalendar}}
+{{> student/mascalendar}}
+{{/if}}
+
+{{#if isSummary}}
+{{> student/massummary}}
+{{/if}}
+
+{{> rightside}}
+
+    </div>
+    
+    </div>
+
+{{> footer}}
+
+  </div>
+

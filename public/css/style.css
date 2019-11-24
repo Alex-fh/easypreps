@@ -73,7 +73,16 @@ nav {
 }
 
 .menu > ul > li > a {
+  display: block;
   color: var(--color-white);
+}
+
+.acmenu {
+  background-color: var(--color-white);
+}
+
+.acmenu a {
+  color: var(--color-black)!important;
 }
 
 .mainarea {
@@ -100,7 +109,7 @@ nav {
   color: var(--color-main)
 }
 
-.student {
+.border {
   margin: 3%;
   padding: 3%;
   outline: 1px solid var(--color-grey);
@@ -111,3 +120,4 @@ nav {
   background-color: var(--color-light_grey);
   outline: 1px solid var(--border-grey);
 }
+

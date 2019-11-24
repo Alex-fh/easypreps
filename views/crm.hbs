@@ -6,11 +6,25 @@
 
     <div class="allarea">
 
-
-{{> menulogin}}
+{{> crm/menucrm}}
 
     <div class="workarea">  
-{{> mainarea}}
+
+{{#if isAbout}}
+{{> crm/macabout}}
+{{/if}}
+
+{{#if isLogin}}
+{{> crm/maclogin}}
+{{/if}}
+
+{{#if isRegister}}
+{{> crm/macregister}}
+{{/if}}
+
+{{#if isMessage}}
+{{> crm/macmessage}}
+{{/if}}
 
 {{> rightside}}
 
