@@ -26,6 +26,8 @@ app.set('views', 'views')
 const PORT = process.env.PORT || 3000
 
 app.use(express.static('public'))
+app.use(express.urlencoded({extended: true}))
+
 app.use('/', crmRoutes)
 app.use('/admin', adminRoutes)
 app.use('/manager', managerRoutes)

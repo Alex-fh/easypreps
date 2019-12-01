@@ -84,4 +84,10 @@ router.get('/reports', function (req, res) {
   })
 })
 
+router.post('/addstudent', function (req, res) {
+  console.log(req.body)
+
+  res.redirect('/manager/newstudent')
+})
+
 module.exports = router
