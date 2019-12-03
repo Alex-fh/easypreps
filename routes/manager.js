@@ -3,6 +3,7 @@
 /* eslint-disable quote-props */
 const {Router} = require('express')
 const router = Router()
+const Student = require('../models/student')
 
 router.get('/', function (req, res) {
   res.render('manager', {
@@ -84,8 +85,17 @@ router.get('/reports', function (req, res) {
   })
 })
 
-router.post('/addstudent', function (req, res) {
+router.post('/addstudent', async function (req, res) {
   console.log(req.body)
+
+  const student = new Student({
+    firstname: req.body.studentfirstname,
+    lastname: req.body.studentlastname,
+    // eslint-disable-next-line sort-keys
+    email: req.body.studentemail
+  })
+
+  await student.save()
 
   res.redirect('/manager/newstudent')
 })

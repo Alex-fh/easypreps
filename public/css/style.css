@@ -68,7 +68,7 @@ nav {
   padding-top: 15px;
 }
 
-.menu > ul > li:hover {
+.menu > ul > li.pasmenu:hover {
   background-color: var(--color-main);
 }
 
