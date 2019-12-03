@@ -11,6 +11,7 @@ const adminRoutes = require('./routes/admin')
 const managerRoutes = require('./routes/manager')
 const tutorRoutes = require('./routes/tutor')
 const studentRoutes = require('./routes/student')
+const mongoose = require('mongoose')
 
 const app = express()
 const hbs = exphbs.create({
@@ -39,6 +40,14 @@ app.use('/student', studentRoutes)
  *   res.sendFile(path.join(__dirname, 'views', 'forms', 'newstudent.hbs'))
  * })
  */
+
+mongoose.connect('mongodb://localhost/easypreps', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true})
+  .then(() => console.log('MongoDB has connected...'))
+  .catch(
+    (err) => console.log(err),
+  )
 
 app.listen(PORT, () => {
 	console.log(`Server is on ${PORT} port`)
