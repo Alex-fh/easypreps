@@ -28,4 +28,12 @@ router.get('/managers', function (req, res) {
   })
 })
 
+router.get('/datacheck', function (req, res) {
+  res.render('admin', {
+    isAdmin: true,
+    isDatacheck: true,
+    title: 'Admin'
+  })
+})
+
 module.exports = router

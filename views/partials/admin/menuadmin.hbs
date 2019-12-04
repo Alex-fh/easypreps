@@ -30,7 +30,15 @@
             </a>
           </li>
 
-          <li>
+          {{#if isDatacheck}}
+          <li class="acmenu">
+          {{else}}
+          <li class="pasmenu">
+          {{/if}}
+            <a href="/admin/datacheck">
+              <i class="small material-icons">check_circle</i><br>
+              <span>Data check</span>
+            </a>
           </li>
 
           <li>

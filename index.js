@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-console */
-// const path = require('path')
 /* eslint-disable quote-props */
+/* eslint-disable dot-location */
 
 // const path = require('path')
 const express = require('express')
@@ -43,13 +43,11 @@ app.use('/student', studentRoutes)
 
 mongoose.connect('mongodb://localhost/easypreps', {
   useNewUrlParser: true,
-  useUnifiedTopology: true})
-  .then(() => console.log('MongoDB has connected...'))
-  .catch(
-    (err) => console.log(err),
-  )
+  useUnifiedTopology: true
+})
+.then(() => console.log('MongoDB has connected...'))
+.catch((err) => console.log(err))
 
 app.listen(PORT, () => {
 	console.log(`Server is on ${PORT} port`)
 })
-
