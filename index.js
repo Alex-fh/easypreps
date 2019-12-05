@@ -3,7 +3,7 @@
 /* eslint-disable quote-props */
 /* eslint-disable dot-location */
 
-// const path = require('path')
+const path = require('path')
 const express = require('express')
 const exphbs = require('express-handlebars')
 const crmRoutes = require('./routes/crm')
@@ -26,7 +26,7 @@ app.set('views', 'views')
 // eslint-disable-next-line no-process-env
 const PORT = process.env.PORT || 3000
 
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({extended: true}))
 
 app.use('/', crmRoutes)
@@ -34,12 +34,6 @@ app.use('/admin', adminRoutes)
 app.use('/manager', managerRoutes)
 app.use('/tutor', tutorRoutes)
 app.use('/student', studentRoutes)
-
-/*
- * app.get('/newstudent', function (req, res) {
- *   res.sendFile(path.join(__dirname, 'views', 'forms', 'newstudent.hbs'))
- * })
- */
 
 mongoose.connect('mongodb://localhost/easypreps', {
   useNewUrlParser: true,

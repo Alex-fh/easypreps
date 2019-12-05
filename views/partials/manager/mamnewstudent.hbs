@@ -8,22 +8,32 @@
     <form class="col s12" action="/manager/addstudent" method="POST">
       <div class="row">
         <div class="input-field col s6">
-          <input id="studentfn" type="text" name="studentfirstname" class="validate">
+          <input id="studentfn" type="text" name="studentfirstname" class="validate" required>
           <label for="studentfn">First Name</label>
+          <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
         </div>
         <div class="input-field col s6">
-          <input id="studentln" type="text" name="studentlastname" class="validate">
+          <input id="studentln" type="text" name="studentlastname" class="validate" required>
           <label for="studentln">Last Name</label>
+          <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="studentem" type="email" name="studentemail" class="validate">
+          <input id="studentem" type="email" name="studentemail" class="validate" required>
           <label for="studentem">Email</label>
+          <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="studentph" type="number" name="studentphone" class="validate" multiple required>
+          <label for="studentph">Phone</label>
+          <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
         </div>
       </div>
 
-<button class="btn waves-effect waves-light" type="submit" name="action">
+<button class="btn waves-effect waves-light" type="submit" name="action btn">
   Submit
   <i class="material-icons right">send</i>
 </button>

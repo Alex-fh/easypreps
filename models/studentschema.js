@@ -18,35 +18,35 @@ const StudentSchema = new Schema({
   email: {
     type: String,
     required: true
+  },
+  phone: {
+    type: [Number],
+    required: true
   // eslint-disable-next-line comma-dangle
   },
 
-/*
- * phone: {
- *   type: [Number],
- *   required: true
- * },
- * isTeen: {
- *   type: Boolean,
- *   default: false
- * },
- * zipcode: {
- *   type: Number,
- *   required: true
- * },
- * pfirstname: {
- *   type: String
- * },
- * plastname: {
- *   type: String
- * },
- * pemail: {
- *   type: String
- * },
- * pphone: {
- *   type: [Number]
- * }
- */
+ /*
+  * isTeen: {
+  *   type: Boolean,
+  *   default: false
+  * },
+  * zipcode: {
+  *   type: Number,
+  *   required: true
+  * },
+  * pfirstname: {
+  *   type: String
+  * },
+  * plastname: {
+  *   type: String
+  * },
+  * pemail: {
+  *   type: String
+  * },
+  * pphone: {
+  *   type: [Number]
+  * }
+  */
 
 })
 

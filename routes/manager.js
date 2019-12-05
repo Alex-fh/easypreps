@@ -3,7 +3,7 @@
 /* eslint-disable quote-props */
 const {Router} = require('express')
 const router = Router()
-const Student = require('../models/student')
+const Student = require('../models/studentschema')
 
 router.get('/', function (req, res) {
   res.render('manager', {
@@ -92,7 +92,8 @@ router.post('/addstudent', async function (req, res) {
     firstname: req.body.studentfirstname,
     lastname: req.body.studentlastname,
     // eslint-disable-next-line sort-keys
-    email: req.body.studentemail
+    email: req.body.studentemail,
+    phone: req.body.studentphone
   })
 
   await student.save()
