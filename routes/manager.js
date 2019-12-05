@@ -4,6 +4,7 @@
 const {Router} = require('express')
 const router = Router()
 const Student = require('../models/studentschema')
+const Tutor = require('../models/tutorschema')
 
 router.get('/', function (req, res) {
   res.render('manager', {
@@ -93,12 +94,30 @@ router.post('/addstudent', async function (req, res) {
     lastname: req.body.studentlastname,
     // eslint-disable-next-line sort-keys
     email: req.body.studentemail,
-    phone: req.body.studentphone
+    phone: req.body.studentphone,
+    zipcode: req.body.studentzip
   })
 
   await student.save()
 
   res.redirect('/manager/newstudent')
+})
+
+router.post('/addtutor', async function (req, res) {
+  console.log(req.body)
+
+  const tutor = new Tutor({
+    firstname: req.body.tutorfirstname,
+    lastname: req.body.tutorlastname,
+    // eslint-disable-next-line sort-keys
+    email: req.body.tutoremail,
+    phone: req.body.tutorphone,
+    zipcode: req.body.tutorzip
+  })
+
+  await tutor.save()
+
+  res.redirect('/manager/newtutor')
 })
 
 module.exports = router

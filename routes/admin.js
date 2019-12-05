@@ -3,6 +3,7 @@
 /* eslint-disable quote-props */
 const {Router} = require('express')
 const router = Router()
+const Manager = require('../models/managerschema')
 
 router.get('/', function (req, res) {
   res.render('admin', {
@@ -34,6 +35,23 @@ router.get('/datacheck', function (req, res) {
     isDatacheck: true,
     title: 'Admin'
   })
+})
+
+router.post('/addmanager', async function (req, res) {
+  console.log(req.body)
+
+  const manager = new Manager({
+    firstname: req.body.managerfirstname,
+    lastname: req.body.managerlastname,
+    // eslint-disable-next-line sort-keys
+    email: req.body.manageremail,
+    phone: req.body.managerphone,
+    zipcode: req.body.managerzip
+  })
+
+  await manager.save()
+
+  res.redirect('/admin/newmanager')
 })
 
 module.exports = router

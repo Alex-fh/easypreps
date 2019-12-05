@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 
 const {Schema, model} = mongoose
 
-const StudentSchema = new Schema({
+const TutorSchema = new Schema({
   firstname: {
     type: String,
     required: true
@@ -26,29 +26,7 @@ const StudentSchema = new Schema({
   zipcode: {
    type: Number,
    required: true
- // eslint-disable-next-line comma-dangle
-  },
-
-
- /*
-  * isTeen: {
-  *   type: Boolean,
-  *   default: false
-  * },
-  * pfirstname: {
-  *   type: String
-  * },
-  * plastname: {
-  *   type: String
-  * },
-  * pemail: {
-  *   type: String
-  * },
-  * pphone: {
-  *   type: [Number]
-  * }
-  */
-
+  }
 })
 
-module.exports = model('Student', StudentSchema)
+module.exports = model('Tutor', TutorSchema)
