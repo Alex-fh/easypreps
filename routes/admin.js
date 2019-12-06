@@ -46,7 +46,9 @@ router.post('/addmanager', async function (req, res) {
     // eslint-disable-next-line sort-keys
     email: req.body.manageremail,
     phone: req.body.managerphone,
-    zipcode: req.body.managerzip
+    zipcode: req.body.managerzip,
+    // eslint-disable-next-line sort-keys
+    bio: req.body.managerbio
   })
 
   await manager.save()

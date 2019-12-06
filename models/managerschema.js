@@ -26,7 +26,11 @@ const ManagerSchema = new Schema({
   zipcode: {
    type: Number,
    required: true
-  }
+  },
+  bio: {
+    type: String,
+    required: true
+   }
 })
 
 module.exports = model('Manager', ManagerSchema)

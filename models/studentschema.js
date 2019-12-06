@@ -26,9 +26,11 @@ const StudentSchema = new Schema({
   zipcode: {
    type: Number,
    required: true
- // eslint-disable-next-line comma-dangle
   },
-
+  bio: {
+    type: String,
+    required: true
+   }
 
  /*
   * isTeen: {

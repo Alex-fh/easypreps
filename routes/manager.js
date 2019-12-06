@@ -95,7 +95,9 @@ router.post('/addstudent', async function (req, res) {
     // eslint-disable-next-line sort-keys
     email: req.body.studentemail,
     phone: req.body.studentphone,
-    zipcode: req.body.studentzip
+    zipcode: req.body.studentzip,
+    // eslint-disable-next-line sort-keys
+    bio: req.body.studentbio
   })
 
   await student.save()
@@ -112,7 +114,9 @@ router.post('/addtutor', async function (req, res) {
     // eslint-disable-next-line sort-keys
     email: req.body.tutoremail,
     phone: req.body.tutorphone,
-    zipcode: req.body.tutorzip
+    zipcode: req.body.tutorzip,
+    // eslint-disable-next-line sort-keys
+    bio: req.body.tutorbio
   })
 
   await tutor.save()
