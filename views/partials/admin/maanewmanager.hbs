@@ -6,6 +6,7 @@
 
   <div class="row">
     <form class="col s12" action="/admin/addmanager" method="POST">
+
       <div class="row">
         <div class="input-field col s6">
           <input id="managerfn" type="text" name="managerfirstname" class="validate" required>
@@ -18,20 +19,21 @@
           <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
+
+      <div class="row iphone">
+        <i class="small material-icons">add</i>
+        <div class="input-field col s5">
+          <input id="managerph" type="number" name="managerphone" class="validate" required>
+          <label for="managerph">Phone*</label>
+          <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+        <div class="input-field col s6">
           <input id="managerem" type="email" name="manageremail" class="validate" required>
           <label for="managerem">Email*</label>
           <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="managerph" type="number" name="managerphone" class="validate" required>
-          <label for="managerph">Phone*</label>
-          <span class="helper-text" data-error="wrong" data-success="right"></span>
-        </div>
-      </div>
+
       <div class="row">
         <div class="input-field col s12">
           <input id="managerzip" type="number" name="managerzip" class="validate" required>
@@ -42,8 +44,8 @@
 
       <div class="row">
         <div class="input-field col s12">
-          <textarea id="textarea1" name="managerbio" class="materialize-textarea validate" required></textarea>
-          <label for="textarea1">Bio*</label>
+          <input id="managerj" type="text" name="managerjob" class="validate">
+          <label for="managerj">Job title</label>
           <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
       </div>

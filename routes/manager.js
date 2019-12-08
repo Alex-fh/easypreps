@@ -92,12 +92,18 @@ router.post('/addstudent', async function (req, res) {
   const student = new Student({
     firstname: req.body.studentfirstname,
     lastname: req.body.studentlastname,
+    phone: req.body.studentphone,
     // eslint-disable-next-line sort-keys
     email: req.body.studentemail,
-    phone: req.body.studentphone,
     zipcode: req.body.studentzip,
     // eslint-disable-next-line sort-keys
-    bio: req.body.studentbio
+    address: req.body.studentaddress,
+    isteen: req.body.studentisteen,
+    pfirstname: req.body.primaryfirstname,
+    plastname: req.body.primarylastname,
+    pphone: req.body.primaryphone,
+    // eslint-disable-next-line sort-keys
+    pemail: req.body.primaryemail
   })
 
   await student.save()

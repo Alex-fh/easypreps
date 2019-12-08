@@ -15,21 +15,20 @@ const ManagerSchema = new Schema({
     type: String,
     required: true
   },
-  email: {
-    type: String,
-    required: true
-  },
   phone: {
     type: Number,
+    required: true
+  },
+  email: {
+    type: String,
     required: true
   },
   zipcode: {
    type: Number,
    required: true
   },
-  bio: {
-    type: String,
-    required: true
+  jobtitle: {
+    type: String
    }
 })
 

@@ -15,22 +15,43 @@ const StudentSchema = new Schema({
     type: String,
     required: true
   },
-  email: {
-    type: String,
-    required: true
-  },
   phone: {
-    type: Number,
-    required: true
+    type: Number
+  },
+  email: {
+    type: String
   },
   zipcode: {
    type: Number,
    required: true
   },
-  bio: {
+  address: {
     type: String,
     required: true
-   }
+  },
+  isteen: {
+    type: String,
+    default: 'off'
+  },
+  pfirstname: {
+    type: String
+  },
+  plastname: {
+    type: String
+  },
+  pphone: {
+    type: Number
+  },
+  pemail: {
+    type: String
+  }
+
+  /*
+   * bio: {
+   *   type: String,
+   *   required: true
+   *  }
+   */
 
  /*
   * isTeen: {

@@ -7,6 +7,7 @@
 :root {
   --color-main: #1EBEB4;
   --color-grey: #E9E9E9;
+  --color-grey-text: #9E9E9E;
   --border-grey: #EEEEEE;
   --color-light_grey: #F7F7F7;
   --color-white: #FFFFFF;
@@ -121,3 +122,21 @@ nav {
   outline: 1px solid var(--border-grey);
 }
 
+.iphone {
+  display: flex;
+}
+
+.iphone > span {
+  color: var(--color-grey-text);
+  align-self: center;
+}
+
+.iphone > i {
+  color: var(--color-grey-text);
+  align-self: center;
+  margin-bottom: 25px;
+}
+
+#pcontact {
+  display: none;
+}

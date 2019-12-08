@@ -43,12 +43,12 @@ router.post('/addmanager', async function (req, res) {
   const manager = new Manager({
     firstname: req.body.managerfirstname,
     lastname: req.body.managerlastname,
+    phone: req.body.managerphone,
     // eslint-disable-next-line sort-keys
     email: req.body.manageremail,
-    phone: req.body.managerphone,
     zipcode: req.body.managerzip,
     // eslint-disable-next-line sort-keys
-    bio: req.body.managerbio
+    jobtitle: req.body.managerjob
   })
 
   await manager.save()

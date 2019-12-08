@@ -6,6 +6,7 @@
 
   <div class="row">
     <form class="col s12" action="/manager/addstudent" method="POST">
+ 
       <div class="row">
         <div class="input-field col s6">
           <input id="studentfn" type="text" name="studentfirstname" class="validate" required>
@@ -18,20 +19,21 @@
           <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
+
+      <div class="row iphone">
+        <i class="small material-icons">add</i>
+        <div class="input-field col s5">
+          <input id="studentph" type="number" name="studentphone" class="validate" required>
+          <label for="studentph">Phone*</label>
+          <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+        <div class="input-field col s6">
           <input id="studentem" type="email" name="studentemail" class="validate" required>
           <label for="studentem">Email*</label>
           <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="studentph" type="number" name="studentphone" class="validate" required>
-          <label for="studentph">Phone*</label>
-          <span class="helper-text" data-error="wrong" data-success="right"></span>
-        </div>
-      </div>
+
       <div class="row">
         <div class="input-field col s12">
           <input id="studentzip" type="number" name="studentzip" class="validate" required>
@@ -42,9 +44,54 @@
 
       <div class="row">
         <div class="input-field col s12">
-          <textarea id="textarea1" name="studentbio" class="materialize-textarea validate" required></textarea>
-          <label for="textarea1">Description*</label>
+          <input id="studentad" type="text" name="studentaddress" class="validate" required>
+          <label for="studentad">Home address*</label>
           <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+      </div>
+
+      <div class="row iphone">
+        <span>Is student less than 18 years old?</span>
+        <div class="input-field col s7">
+          <!-- Switch -->
+          <div class="switch">
+            <label>
+              No
+              <input type="checkbox" id="cb" name="studentisteen" 
+              onchange='primarycontact("cb","pcontact","primaryfn","primaryln","primaryph","primaryem","studentph","studentem")'>
+              <span class="lever"></span>
+              Yes
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div id="pcontact">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="primaryfn" type="text" name="primaryfirstname" class="validate">
+            <label for="primaryfn">Primary first name*</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
+          </div>
+          <div class="input-field col s6">
+            <input id="primaryln" type="text" name="primarylastname" class="validate">
+            <label for="primaryln">Primary last name*</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
+          </div>
+        </div>
+
+        <div class="row iphone">
+          <i class="small material-icons">add</i>
+          <div class="input-field col s5">
+            <input id="primaryph" type="number" name="primaryphone" class="validate">
+            <label for="primaryph">Primary phone*</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
+          </div>
+          <div class="input-field col s6">
+            <input id="primaryem" type="email" name="primaryemail" class="validate">
+            <label for="primaryem">Primary email*</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
+          </div>
         </div>
       </div>
 
