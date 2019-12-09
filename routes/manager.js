@@ -54,7 +54,12 @@ router.get('/check', function (req, res) {
   })
 })
 
-router.get('/students', function (req, res) {
+router.get('/students', async function (req, res) {
+
+  const students = await Student.find()
+
+  console.log(students)
+
   res.render('manager', {
     isManager: true,
     isStudents: true,
