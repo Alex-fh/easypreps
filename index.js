@@ -12,16 +12,31 @@ const managerRoutes = require('./routes/manager')
 const tutorRoutes = require('./routes/tutor')
 const studentRoutes = require('./routes/student')
 const mongoose = require('mongoose')
+const helpers = require('handlebars-helpers')
 
 const app = express()
 const hbs = exphbs.create({
   'defaultLayout': 'main',
-  'extname': 'hbs'
+  'extname': 'hbs',
+  helpers: {
+
+    /*
+     * foo: function (a) { return a+4},
+     * bar: function (b) { return b+10}
+     */
+  }
 })
+// eslint-disable-next-line no-unused-vars
+const array = helpers.array()
+// eslint-disable-next-line no-unused-vars
+const math = helpers.math()
+
+// exphbs.registerHelper('paginate', pagination)
 
 app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs')
 app.set('views', 'views')
+
 
 // eslint-disable-next-line no-process-env
 const PORT = process.env.PORT || 3000

@@ -57,7 +57,7 @@ router.get('/check', function (req, res) {
 router.get('/students', async function (req, res) {
 
   try {
-      const students = await Student.find()
+      const students = await Student.find().countDocuments()
 
       console.log(students)
 
