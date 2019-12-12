@@ -57,16 +57,19 @@ router.get('/check', function (req, res) {
 router.get('/students', async function (req, res) {
 
   try {
-      const students = await Student.find().countDocuments()
+      const numstudents = await Student.find().countDocuments()
+      const students = await Student.find().skip(6).limit(6)
 
-      console.log(students)
+      console.log(numstudents)
 
       res.render('manager', {
         isManager: true,
         isStudents: true,
         title: 'Manager',
         // eslint-disable-next-line sort-keys
-        students
+        students,
+        // eslint-disable-next-line sort-keys
+        numstudents
       })
 
    } catch (error) {
