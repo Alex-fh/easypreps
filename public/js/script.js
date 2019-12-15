@@ -5,7 +5,7 @@
 /* eslint-disable max-statements */
 
 /**
- * @description Show block with primary contacts.
+ * @description Show block with primary contacts. It sets global values.
  * @param {string} idcheck The ID of the checkbox.
  * @param {string} idparents The ID of the parents block.
  * @param {string} idprimaryfn The ID of the primary first name.

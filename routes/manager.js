@@ -54,13 +54,18 @@ router.get('/check', function (req, res) {
   })
 })
 
-router.get('/students', async function (req, res) {
-
+router.get('/students/:np', async function (req, res) {
   try {
-      const numstudents = await Student.find().countDocuments()
-      const students = await Student.find().skip(6).limit(6)
+    const {np} = req.params
+    const numrows = 5
+    const numstudents = await Student.find().countDocuments()
+    // eslint-disable-next-line newline-per-chained-call
+    const students = await Student.find().skip(0).limit(numrows)
 
-      console.log(numstudents)
+    // eslint-disable-next-line no-ternary
+   const pagitems = numstudents % numrows
+   // eslint-disable-next-line multiline-ternary
+   ? Math.ceil(numstudents / numrows) : numstudents / numrows
 
       res.render('manager', {
         isManager: true,
@@ -69,9 +74,13 @@ router.get('/students', async function (req, res) {
         // eslint-disable-next-line sort-keys
         students,
         // eslint-disable-next-line sort-keys
-        numstudents
+        numstudents,
+        // eslint-disable-next-line sort-keys
+        numrows,
+        pagitems,
+        // eslint-disable-next-line sort-keys
+        np
       })
-
    } catch (error) {
     console.log(error)
    }

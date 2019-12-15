@@ -1,13 +1,13 @@
 <div class="mainarea">
 
-<h2>Students</h2>
+<h2>Students &nbsp; {{numstudents}}</h2>
 
 <div class="border">
 
   <ul class="collection">
 
     {{!-- {{students.length}}  {{times 6 (floor (divide students.length 10))}} --}}
-    {{numstudents}}
+    numrows - {{numrows}} np - {{np}}
     {{#each students}}
       <li class="collection-item avatar"> 
         <i class="material-icons circle">folder</i>
@@ -18,17 +18,18 @@
     {{/each}} 
   </ul>
 
+  paginate items = {{pagitems}}
   <ul class="pagination">
     <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    
     <li class="active"><a href="#!">1</a></li>
-    <li class="waves-effect"><a href="#!">2</a></li>
-    <li class="waves-effect"><a href="#!">3</a></li>
+    
+    <li class="waves-effect"><a href="/manager/students/2">2</a></li>
+    <li class="waves-effect"><a href="/manager/students/3">3</a></li>
     <li class="waves-effect"><a href="#!">4</a></li>
     <li class="waves-effect"><a href="#!">5</a></li>
     <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
   </ul>
-
-
 
 </div>
 </div>
