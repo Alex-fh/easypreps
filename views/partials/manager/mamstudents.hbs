@@ -18,34 +18,39 @@
     {{/each}} 
   </ul>
 
-  paginate items = {{pagitems}}
+  Total pages = {{pagitems}}
   <ul class="pagination">
 
+    <li class="waves-effect"><a href="/manager/students/1"><i class="material-icons">first_page</i></a></li>
+    {{#lte np 1}}
     <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-    
-    
+    {{/lte}}
+    {{#gt np 1}}
+    <li class="waves-effect"><a href="/manager/students/{{subtract np 1}}"><i class="material-icons">chevron_left</i></a></li>
+    {{/gt}}
 
     {{#gte np 3}}
-    <li class="waves-effect"><a href="/manager/students/np-2">{{subtract np 2}}</a></li>
+    <li class="waves-effect"><a href="/manager/students/{{subtract np 2}}">{{subtract np 2}}</a></li>
     {{/gte}}
     {{#gte np 2}}
-    <li class="waves-effect"><a href="/manager/students/np-1">{{subtract np 1}}</a></li>
+    <li class="waves-effect"><a href="/manager/students/{{subtract np 1}}">{{subtract np 1}}</a></li>
     {{/gte}}
 
-    <li class="waves-effect"><a href="/manager/students/np">{{np}}</a></li>
-    <li class="waves-effect"><a href="/manager/students/np+1">{{add np 1}}</a></li>
-    <li class="waves-effect"><a href="/manager/students/np+2">{{add np 2}}</a></li>
+    <li class="waves-effect active"><a href="/manager/students/{{np}}">{{np}}</a></li>
+    <li class="waves-effect"><a href="/manager/students/{{add np 1}}">{{add np 1}}</a></li>
+    <li class="waves-effect"><a href="/manager/students/{{add np 2}}">{{add np 2}}</a></li>
 
     {{!-- for small numbers --}}
     {{#lte np 2}}
-    <li class="waves-effect"><a href="/manager/students/np+3">{{add np 3}}</a></li>
+    <li class="waves-effect"><a href="/manager/students/{{add np 3}}">{{add np 3}}</a></li>
     {{/lte}}
     {{#lte np 1}}
-    <li class="waves-effect"><a href="/manager/students/np+4">{{add np 4}}</a></li>
+    <li class="waves-effect"><a href="/manager/students/{{add np 4}}">{{add np 4}}</a></li>
     {{/lte}}
 
-    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-  
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    <li class="waves-effect"><a href="/manager/students/{{pagitems}}"><i class="material-icons">last_page</i></a></li>
+
   </ul>
 
 </div>
