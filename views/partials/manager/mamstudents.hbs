@@ -20,15 +20,32 @@
 
   paginate items = {{pagitems}}
   <ul class="pagination">
+
     <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
     
-    <li class="active"><a href="#!">1</a></li>
     
-    <li class="waves-effect"><a href="/manager/students/2">2</a></li>
-    <li class="waves-effect"><a href="/manager/students/3">3</a></li>
-    <li class="waves-effect"><a href="#!">4</a></li>
-    <li class="waves-effect"><a href="#!">5</a></li>
+
+    {{#gte np 3}}
+    <li class="waves-effect"><a href="/manager/students/np-2">{{subtract np 2}}</a></li>
+    {{/gte}}
+    {{#gte np 2}}
+    <li class="waves-effect"><a href="/manager/students/np-1">{{subtract np 1}}</a></li>
+    {{/gte}}
+
+    <li class="waves-effect"><a href="/manager/students/np">{{np}}</a></li>
+    <li class="waves-effect"><a href="/manager/students/np+1">{{add np 1}}</a></li>
+    <li class="waves-effect"><a href="/manager/students/np+2">{{add np 2}}</a></li>
+
+    {{!-- for small numbers --}}
+    {{#lte np 2}}
+    <li class="waves-effect"><a href="/manager/students/np+3">{{add np 3}}</a></li>
+    {{/lte}}
+    {{#lte np 1}}
+    <li class="waves-effect"><a href="/manager/students/np+4">{{add np 4}}</a></li>
+    {{/lte}}
+
     <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+  
   </ul>
 
 </div>

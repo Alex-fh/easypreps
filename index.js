@@ -30,6 +30,8 @@ const hbs = exphbs.create({
 const array = helpers.array()
 // eslint-disable-next-line no-unused-vars
 const math = helpers.math()
+// eslint-disable-next-line no-unused-vars
+const comparison = helpers.comparison()
 
 // exphbs.registerHelper('paginate', pagination)
 

@@ -60,7 +60,7 @@ router.get('/students/:np', async function (req, res) {
     const numrows = 5
     const numstudents = await Student.find().countDocuments()
     // eslint-disable-next-line newline-per-chained-call
-    const students = await Student.find().skip(0).limit(numrows)
+  const students = await Student.find().skip((np - 1) * numrows).limit(numrows)
 
     // eslint-disable-next-line no-ternary
    const pagitems = numstudents % numrows
