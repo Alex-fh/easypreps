@@ -140,3 +140,11 @@ nav {
 #pcontact {
   display: none;
 }
+
+.pagination li.active {
+  background-color: var(--color-main);
+}
+
+.secondary-content {
+  color: var(--color-main);
+}

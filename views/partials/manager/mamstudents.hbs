@@ -19,16 +19,28 @@
   </ul>
 
   Total pages = {{pagitems}}
+
   <ul class="pagination">
 
-    <li class="waves-effect"><a href="/manager/students/1"><i class="material-icons">first_page</i></a></li>
+    {{!-- Arrows  --}}
     {{#lte np 1}}
+    <li class="disabled"><a href="/manager/students/1"><i class="material-icons">first_page</i></a></li>
     <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
     {{/lte}}
     {{#gt np 1}}
+    <li class="waves-effect"><a href="/manager/students/1"><i class="material-icons">first_page</i></a></li>
     <li class="waves-effect"><a href="/manager/students/{{subtract np 1}}"><i class="material-icons">chevron_left</i></a></li>
     {{/gt}}
 
+    {{!-- Additional first numbers for big numbers --}}
+    {{#gte np (subtract pagitems 0)}}
+    <li class="waves-effect"><a href="/manager/students/{{subtract np 4}}">{{subtract np 4}}</a></li>
+    {{/gte}}
+    {{#gte np (subtract pagitems 1)}}
+    <li class="waves-effect"><a href="/manager/students/{{subtract np 3}}">{{subtract np 3}}</a></li>
+    {{/gte}}
+
+    {{!-- 2 First numders--}}
     {{#gte np 3}}
     <li class="waves-effect"><a href="/manager/students/{{subtract np 2}}">{{subtract np 2}}</a></li>
     {{/gte}}
@@ -36,11 +48,18 @@
     <li class="waves-effect"><a href="/manager/students/{{subtract np 1}}">{{subtract np 1}}</a></li>
     {{/gte}}
 
+    {{!-- The Active number --}}
     <li class="waves-effect active"><a href="/manager/students/{{np}}">{{np}}</a></li>
-    <li class="waves-effect"><a href="/manager/students/{{add np 1}}">{{add np 1}}</a></li>
-    <li class="waves-effect"><a href="/manager/students/{{add np 2}}">{{add np 2}}</a></li>
 
-    {{!-- for small numbers --}}
+    {{!-- 2 Last numbers --}}
+    {{#lte np (subtract pagitems 1)}}
+    <li class="waves-effect"><a href="/manager/students/{{add np 1}}">{{add np 1}}</a></li>
+    {{/lte}}
+    {{#lte np (subtract pagitems 2)}}
+    <li class="waves-effect"><a href="/manager/students/{{add np 2}}">{{add np 2}}</a></li>
+    {{/lte}}
+
+    {{!-- Additional back numbers for small numbers --}}
     {{#lte np 2}}
     <li class="waves-effect"><a href="/manager/students/{{add np 3}}">{{add np 3}}</a></li>
     {{/lte}}
@@ -48,8 +67,15 @@
     <li class="waves-effect"><a href="/manager/students/{{add np 4}}">{{add np 4}}</a></li>
     {{/lte}}
 
-    <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    {{!-- Arrows --}}
+    {{#lt np pagitems}}
+    <li class="waves-effect"><a href="/manager/students/{{add np 1}}"><i class="material-icons">chevron_right</i></a></li>
     <li class="waves-effect"><a href="/manager/students/{{pagitems}}"><i class="material-icons">last_page</i></a></li>
+    {{/lt}}
+    {{#gte np pagitems}}
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    <li class="disabled"><a href="#!"><i class="material-icons">last_page</i></a></li>
+    {{/gte}}
 
   </ul>
 
