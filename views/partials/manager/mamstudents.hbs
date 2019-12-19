@@ -7,7 +7,7 @@
   <ul class="collection">
 
     {{!-- {{students.length}}  {{times 6 (floor (divide students.length 10))}} --}}
-    numrows - {{numrows}} np - {{np}}
+    numrows - {{numrows}} np - {{np}}  Total pages = {{pagitems}}
     {{#each students}}
       <li class="collection-item avatar"> 
         <i class="material-icons circle">folder</i>
@@ -18,8 +18,125 @@
     {{/each}} 
   </ul>
 
-  Total pages = {{pagitems}}
+  {{#eq pagitems 1}}
+  <ul class="pagination">
 
+    {{!-- Arrows  --}}
+    {{#lte np 1}}
+    <li class="disabled"><a href="/manager/students/1"><i class="material-icons">first_page</i></a></li>
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    {{/lte}}
+
+    {{!-- The Active number --}}
+    <li class="waves-effect active"><a href="/manager/students/{{np}}">{{np}}</a></li>
+
+    {{!-- Arrows --}}
+    {{#gte np pagitems}}
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    <li class="disabled"><a href="#!"><i class="material-icons">last_page</i></a></li>
+    {{/gte}}
+
+  </ul>
+  {{/eq}}
+
+  {{#or (eq pagitems 2) (eq pagitems 3)}}
+  <ul class="pagination">
+
+    {{!-- Arrows  --}}
+    {{#lte np 1}}
+    <li class="disabled"><a href="/manager/students/1"><i class="material-icons">first_page</i></a></li>
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    {{/lte}}
+    {{#gt np 1}}
+    <li class="waves-effect"><a href="/manager/students/1"><i class="material-icons">first_page</i></a></li>
+    <li class="waves-effect"><a href="/manager/students/{{subtract np 1}}"><i class="material-icons">chevron_left</i></a></li>
+    {{/gt}}
+
+    {{!-- 2 First numders--}}
+    {{#gte np 3}}
+    <li class="waves-effect"><a href="/manager/students/{{subtract np 2}}">{{subtract np 2}}</a></li>
+    {{/gte}}
+    {{#gte np 2}}
+    <li class="waves-effect"><a href="/manager/students/{{subtract np 1}}">{{subtract np 1}}</a></li>
+    {{/gte}}
+
+    {{!-- The Active number --}}
+    <li class="waves-effect active"><a href="/manager/students/{{np}}">{{np}}</a></li>
+
+    {{!-- 2 Last numbers --}}
+    {{#lte np (subtract pagitems 1)}}
+    <li class="waves-effect"><a href="/manager/students/{{add np 1}}">{{add np 1}}</a></li>
+    {{/lte}}
+    {{#lte np (subtract pagitems 2)}}
+    <li class="waves-effect"><a href="/manager/students/{{add np 2}}">{{add np 2}}</a></li>
+    {{/lte}}
+
+    {{!-- Arrows --}}
+    {{#lt np pagitems}}
+    <li class="waves-effect"><a href="/manager/students/{{add np 1}}"><i class="material-icons">chevron_right</i></a></li>
+    <li class="waves-effect"><a href="/manager/students/{{pagitems}}"><i class="material-icons">last_page</i></a></li>
+    {{/lt}}
+    {{#gte np pagitems}}
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    <li class="disabled"><a href="#!"><i class="material-icons">last_page</i></a></li>
+    {{/gte}}
+
+  </ul>
+  {{/or}}
+
+  {{#eq pagitems 4}}
+  <ul class="pagination">
+
+    {{!-- Arrows  --}}
+    {{#lte np 1}}
+    <li class="disabled"><a href="/manager/students/1"><i class="material-icons">first_page</i></a></li>
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    {{/lte}}
+    {{#gt np 1}}
+    <li class="waves-effect"><a href="/manager/students/1"><i class="material-icons">first_page</i></a></li>
+    <li class="waves-effect"><a href="/manager/students/{{subtract np 1}}"><i class="material-icons">chevron_left</i></a></li>
+    {{/gt}}
+
+    {{!-- 3 First numders--}}
+    {{#gte np 4}}
+    <li class="waves-effect"><a href="/manager/students/{{subtract np 3}}">{{subtract np 3}}</a></li>
+    {{/gte}}
+    {{#gte np 3}}
+    <li class="waves-effect"><a href="/manager/students/{{subtract np 2}}">{{subtract np 2}}</a></li>
+    {{/gte}}
+    {{#gte np 2}}
+    <li class="waves-effect"><a href="/manager/students/{{subtract np 1}}">{{subtract np 1}}</a></li>
+    {{/gte}}
+
+    {{!-- The Active number --}}
+    <li class="waves-effect active"><a href="/manager/students/{{np}}">{{np}}</a></li>
+
+    {{!-- 2 Last numbers --}}
+    {{#lte np (subtract pagitems 1)}}
+    <li class="waves-effect"><a href="/manager/students/{{add np 1}}">{{add np 1}}</a></li>
+    {{/lte}}
+    {{#lte np (subtract pagitems 2)}}
+    <li class="waves-effect"><a href="/manager/students/{{add np 2}}">{{add np 2}}</a></li>
+    {{/lte}}
+    {{#lte np (subtract pagitems 3)}}
+    <li class="waves-effect"><a href="/manager/students/{{add np 3}}">{{add np 3}}</a></li>
+    {{/lte}}
+
+
+    {{!-- Arrows --}}
+    {{#lt np pagitems}}
+    <li class="waves-effect"><a href="/manager/students/{{add np 1}}"><i class="material-icons">chevron_right</i></a></li>
+    <li class="waves-effect"><a href="/manager/students/{{pagitems}}"><i class="material-icons">last_page</i></a></li>
+    {{/lt}}
+    {{#gte np pagitems}}
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    <li class="disabled"><a href="#!"><i class="material-icons">last_page</i></a></li>
+    {{/gte}}
+
+  </ul>
+  {{/eq}}
+
+  {{#gte pagitems 5}}
   <ul class="pagination">
 
     {{!-- Arrows  --}}
@@ -78,6 +195,7 @@
     {{/gte}}
 
   </ul>
+  {{/gte}}
 
 </div>
 </div>
