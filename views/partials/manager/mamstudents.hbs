@@ -4,16 +4,38 @@
 
 <div class="border">
 
-  <ul class="collection">
+  <div class="row">
+    <form class="col s12" action="/manager/rowsnumber" method="POST">
 
-    {{!-- {{students.length}}  {{times 6 (floor (divide students.length 10))}} --}}
-    numrows - {{numrows}} np - {{np}}  Total pages = {{pagitems}}
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="rnumber" type="number" name="rowsnumber" class="validate">
+          <label for="rnumber">Rows number</label>
+          <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+      </div>
+
+<button class="btn-small waves-effect waves-light" type="submit" name="action btn">
+  Submit
+  <i class="material-icons right">send</i>
+</button>
+
+    </form>
+  </div>
+
+
+     numrows - {{numrows}} np - {{np}}  Total pages = {{pagitems}}
+  <ul class="collection">
     {{#each students}}
-      <li class="collection-item avatar"> 
-        <i class="material-icons circle">folder</i>
-        <span class="title">Title</span>
-        <p>{{firstname}} {{lastname}}</p>
-        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+      <li class="collection-item avatar valign-wrapper"> 
+          <i class="material-icons circle" title="Open">child_care</i>
+        <span class="title">{{firstname}} {{lastname}}</span>
+        <a href="#!" class="secondary-content seccont">
+          <i class="material-icons" title="Edit" onclick="alert('{{email}}')">edit</i>
+        </a>
+        <a href="#!" class="secondary-content">
+          <i class="material-icons" title="Delete" onclick="alert('{{lastname}}')">delete_forever</i>
+        </a>
       </li>
     {{/each}} 
   </ul>

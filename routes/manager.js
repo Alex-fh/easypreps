@@ -6,6 +6,9 @@ const router = Router()
 const Student = require('../models/studentschema')
 const Tutor = require('../models/tutorschema')
 
+// eslint-disable-next-line prefer-const
+  let numrows = 5
+
 router.get('/', function (req, res) {
   res.render('manager', {
     isManager: true,
@@ -15,6 +18,7 @@ router.get('/', function (req, res) {
 })
 
 router.get('/newstudent', function (req, res) {
+
   res.render('manager', {
     isManager: true,
     isNewstudent: true,
@@ -54,10 +58,17 @@ router.get('/check', function (req, res) {
   })
 })
 
+router.post('/rowsnumber', function (req, res) {
+  numrows = Number(req.body.rowsnumber)
+  res.redirect('/manager/students/1')
+})
+
 router.get('/students/:np', async function (req, res) {
   try {
     const {np} = req.params
-    const numrows = 13
+
+    console.log(numrows)
+
     const numstudents = await Student.find().countDocuments()
     // eslint-disable-next-line newline-per-chained-call
   const students = await Student.find().skip((np - 1) * numrows).limit(numrows)

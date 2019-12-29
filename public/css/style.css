@@ -146,5 +146,28 @@ nav {
 }
 
 .secondary-content {
+  /* top: 30px!important; */
+  color: var(--color-grey-text);
+}
+
+.secondary-content:hover {
+  /* top: 30px!important; */
   color: var(--color-main);
+}
+
+.seccont {
+  right: 96px!important;
+}
+
+.collection .collection-item.avatar i.circle {
+  background-color: var(--color-grey-text);
+}
+
+.collection .collection-item.avatar i.circle:hover {
+  background-color: var(--color-main);
+  cursor: pointer;
+}
+
+.collection .collection-item.avatar {
+    min-height: 74px;
 }
