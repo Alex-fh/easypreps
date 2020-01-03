@@ -4,49 +4,33 @@
 
 <div class="border">
 
-  <div class="row">
-    <form class="col s12" action="/manager/rowsnumber" method="POST">
-
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="rnumber" type="number" name="rowsnumber" class="validate">
-          <label for="rnumber">Rows number</label>
-          <span class="helper-text" data-error="wrong" data-success="right"></span>
-        </div>
-      </div>
-
-<button class="btn-small waves-effect waves-light" type="submit" name="action btn">
-  Submit
-  <i class="material-icons right">send</i>
-</button>
-
-    </form>
-  </div>
-
 
      numrows - {{numrows}} np - {{np}}  Total pages = {{pagitems}}
-  <ul class="collection">
+  <div class="collection">
     {{#each students}}
-      <li class="collection-item avatar valign-wrapper"> 
+      <a class="collection-item avatar valign-wrapper"> 
           <i class="material-icons circle" title="Open">child_care</i>
         <span class="title">{{firstname}} {{lastname}}</span>
-        <a href="#!" class="secondary-content seccont">
+        <p>{{zipcode}} <br>
+         {{phone}}
+      </p>
+        {{!-- <a href="#!" class="secondary-content seccont">
           <i class="material-icons" title="Edit" onclick="alert('{{email}}')">edit</i>
         </a>
         <a href="#!" class="secondary-content">
           <i class="material-icons" title="Delete" onclick="alert('{{lastname}}')">delete_forever</i>
-        </a>
-      </li>
+        </a> --}}
+      </a>
     {{/each}} 
-  </ul>
+  </div>
 
   {{#eq pagitems 1}}
   <ul class="pagination">
 
     {{!-- Arrows  --}}
     {{#lte np 1}}
-    <li class="disabled"><a href="/manager/students/1"><i class="material-icons">first_page</i></a></li>
-    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    <li class="disabled"><a href=""><i class="material-icons">first_page</i></a></li>
+    <li class="disabled"><a href=""><i class="material-icons">chevron_left</i></a></li>
     {{/lte}}
 
     {{!-- The Active number --}}
@@ -54,8 +38,8 @@
 
     {{!-- Arrows --}}
     {{#gte np pagitems}}
-    <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-    <li class="disabled"><a href="#!"><i class="material-icons">last_page</i></a></li>
+    <li class="disabled"><a href=""><i class="material-icons">chevron_right</i></a></li>
+    <li class="disabled"><a href=""><i class="material-icons">last_page</i></a></li>
     {{/gte}}
 
   </ul>
@@ -66,8 +50,8 @@
 
     {{!-- Arrows  --}}
     {{#lte np 1}}
-    <li class="disabled"><a href="/manager/students/1"><i class="material-icons">first_page</i></a></li>
-    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    <li class="disabled"><a href=""><i class="material-icons">first_page</i></a></li>
+    <li class="disabled"><a href=""><i class="material-icons">chevron_left</i></a></li>
     {{/lte}}
     {{#gt np 1}}
     <li class="waves-effect"><a href="/manager/students/1"><i class="material-icons">first_page</i></a></li>
@@ -99,8 +83,8 @@
     <li class="waves-effect"><a href="/manager/students/{{pagitems}}"><i class="material-icons">last_page</i></a></li>
     {{/lt}}
     {{#gte np pagitems}}
-    <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-    <li class="disabled"><a href="#!"><i class="material-icons">last_page</i></a></li>
+    <li class="disabled"><a href=""><i class="material-icons">chevron_right</i></a></li>
+    <li class="disabled"><a href=""><i class="material-icons">last_page</i></a></li>
     {{/gte}}
 
   </ul>
@@ -111,8 +95,8 @@
 
     {{!-- Arrows  --}}
     {{#lte np 1}}
-    <li class="disabled"><a href="/manager/students/1"><i class="material-icons">first_page</i></a></li>
-    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    <li class="disabled"><a href=""><i class="material-icons">first_page</i></a></li>
+    <li class="disabled"><a href=""><i class="material-icons">chevron_left</i></a></li>
     {{/lte}}
     {{#gt np 1}}
     <li class="waves-effect"><a href="/manager/students/1"><i class="material-icons">first_page</i></a></li>
@@ -151,8 +135,8 @@
     <li class="waves-effect"><a href="/manager/students/{{pagitems}}"><i class="material-icons">last_page</i></a></li>
     {{/lt}}
     {{#gte np pagitems}}
-    <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-    <li class="disabled"><a href="#!"><i class="material-icons">last_page</i></a></li>
+    <li class="disabled"><a href=""><i class="material-icons">chevron_right</i></a></li>
+    <li class="disabled"><a href=""><i class="material-icons">last_page</i></a></li>
     {{/gte}}
 
   </ul>
@@ -163,8 +147,8 @@
 
     {{!-- Arrows  --}}
     {{#lte np 1}}
-    <li class="disabled"><a href="/manager/students/1"><i class="material-icons">first_page</i></a></li>
-    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    <li class="disabled"><a href=""><i class="material-icons">first_page</i></a></li>
+    <li class="disabled"><a href=""><i class="material-icons">chevron_left</i></a></li>
     {{/lte}}
     {{#gt np 1}}
     <li class="waves-effect"><a href="/manager/students/1"><i class="material-icons">first_page</i></a></li>
@@ -212,8 +196,8 @@
     <li class="waves-effect"><a href="/manager/students/{{pagitems}}"><i class="material-icons">last_page</i></a></li>
     {{/lt}}
     {{#gte np pagitems}}
-    <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-    <li class="disabled"><a href="#!"><i class="material-icons">last_page</i></a></li>
+    <li class="disabled"><a href=""><i class="material-icons">chevron_right</i></a></li>
+    <li class="disabled"><a href=""><i class="material-icons">last_page</i></a></li>
     {{/gte}}
 
   </ul>

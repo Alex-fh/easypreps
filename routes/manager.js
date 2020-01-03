@@ -67,11 +67,11 @@ router.get('/students/:np', async function (req, res) {
   try {
     const {np} = req.params
 
-    console.log(numrows)
-
     const numstudents = await Student.find().countDocuments()
     // eslint-disable-next-line newline-per-chained-call
-  const students = await Student.find().skip((np - 1) * numrows).limit(numrows)
+  const students = await
+  // eslint-disable-next-line newline-per-chained-call
+  Student.find().sort({zipcode: -1}).skip((np - 1) * numrows).limit(numrows)
 
     // eslint-disable-next-line no-ternary
    const pagitems = numstudents % numrows

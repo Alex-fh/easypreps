@@ -1,58 +1,64 @@
 
-  <div class="wrapper">
+<div class="wrapper">
 
-{{> crmname}}
+  {{> crmname}}
 
-    <div class="allarea">
+  <div class="allarea">
 
-{{> manager/menumanager}}
+  {{> manager/menumanager}}
 
-      <div class="workarea">  
+    <div class="workarea">  
 
-{{#if isProfile}}
-{{> manager/mammanager}}
-{{/if}}
+      {{#if isProfile}}
+      {{> manager/mammanager}}
+      {{/if}}
 
-{{#if isNewstudent}}
-{{> manager/mamnewstudent}}
-{{/if}}
+      {{#if isNewstudent}}
+      {{> manager/mamnewstudent}}
+      {{/if}}
 
-{{#if isNewtutor}}
-{{> manager/mamnewtutor}}
-{{/if}}
+      {{#if isNewtutor}}
+      {{> manager/mamnewtutor}}
+      {{/if}}
 
-{{#if isNewjob}}
-{{> manager/mamnewjob}}
-{{/if}}
+      {{#if isNewjob}}
+      {{> manager/mamnewjob}}
+      {{/if}}
 
-{{#if isMatch}}
-{{> manager/mammatch}}
-{{/if}}
+      {{#if isMatch}}
+      {{> manager/mammatch}}
+      {{/if}}
 
-{{#if isCheck}}
-{{> manager/mamcheck}}
-{{/if}}
+      {{#if isCheck}}
+      {{> manager/mamcheck}}
+      {{/if}}
 
-{{#if isStudents}}
-{{> manager/mamstudents}}
-{{/if}}
+      {{#if isStudents}}
+      {{> manager/mamstudents}}
+      {{/if}}
 
-{{#if isTutors}}
-{{> manager/mamtutors}}
-{{/if}}
+      {{#if isTutors}}
+      {{> manager/mamtutors}}
+      {{/if}}
 
-{{#if isCalendars}}
-{{> manager/mamcalendars}}
-{{/if}}
+      {{#if isCalendars}}
+      {{> manager/mamcalendars}}
+      {{/if}}
 
-{{#if isReports}}
-{{> manager/mamreports}}
-{{/if}}
+      {{#if isReports}}
+      {{> manager/mamreports}}
+      {{/if}}
 
-{{> rightside}}
-      </div>
+      {{#if isStudents}}
+      {{> manager/rsastudents}}
+      {{else}}
+      {{> rightside}}
+      {{/if}}
+
     </div>
 
-{{> footer}}
-
   </div>
+
+  {{> footer}}
+
+</div>
