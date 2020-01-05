@@ -1,26 +1,77 @@
 <div class="rightside">
 
-<div class="border">
+{{!-- Num rows --}}
 
+<div class="border">
+  <h6>Show the number of students</h6>
   <div class="row">
     <form class="col s12" action="/manager/rowsnumber" method="POST">
 
       <div class="row">
         <div class="input-field col s12">
-          <input id="rnumber" type="number" name="rowsnumber" class="validate" required min="1" max="50">
-          <label for="rnumber">Rows number</label>
+          <input id="rnumber" type="number" name="rowsnumber" class="validate" min="1" max="50">
+          <label for="rnumber">Number</label>
           <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
-
-
       </div>
 
-          <button class="btn-small waves-effect waves-light" type="submit" name="action btn">
-            Submit
-            <i class="material-icons right">send</i>
-          </button>
+      <button class="btn-small waves-effect waves-light" type="submit" name="action btn">
+        Submit
+        <i class="material-icons right">send</i>
+      </button>
 
     </form>
   </div>
 </div>
+
+{{!-- Sort by --}}
+
+<div class="border">
+  <h6>Sort by..</h6>
+  <div class="row">
+    <form class="col s12" action="/manager/sortby" method="POST">
+  <div class="row">
+  <div class="input-field col s12">
+    <select  name="znach">
+      <optgroup label="Student contact">
+        <option value="$natural" selected>In order of introduction</option>
+        <option value="firstname">First name</option>
+        <option value="lastname">Last name</option>
+        <option value="phone">Phone</option>
+        <option value="email">E-mail</option>
+        <option value="zipcode">Zip code</option>
+      </optgroup>
+      <optgroup label="Primary contact">
+        <option value="pfirstname">Primary first name</option>
+        <option value="plastname">Primary last name</option>
+        <option value="pphone">Primary phone</option>
+        <option value="pemail">Primary e-mail</option>
+      </optgroup>
+    </select>
+    <label>Choose an option</label>
+  </div>
+  </div>
+
+    <p>
+      <label>
+        <input class="with-gap" name="acdec" value="ac" type="radio" checked />
+        <span>Ascending</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input class="with-gap" name="acdec" value="dec" type="radio"  />
+        <span>Descending</span>
+      </label>
+    </p>
+
+      <button class="btn-small waves-effect waves-light" type="submit" name="action btn">
+        Submit
+        <i class="material-icons right">send</i>
+      </button>
+  </form>
+
+  </div>
+</div>
+
 </div>

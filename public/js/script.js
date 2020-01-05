@@ -64,3 +64,11 @@ if (checkbx.checked) {
 	studentemtxt.innerHTML = 'Email*'
 }
 }
+
+  // eslint-disable-next-line no-undef
+  document.addEventListener('DOMContentLoaded', function () {
+    // eslint-disable-next-line no-undef
+    const elems = document.querySelectorAll('select');
+    // eslint-disable-next-line no-undef
+    const instances = M.FormSelect.init(elems, 'classes');
+  })

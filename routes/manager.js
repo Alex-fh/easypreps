@@ -8,6 +8,7 @@ const Tutor = require('../models/tutorschema')
 
 // eslint-disable-next-line prefer-const
   let numrows = 5
+  let sortby = {}
 
 router.get('/', function (req, res) {
   res.render('manager', {
@@ -63,6 +64,26 @@ router.post('/rowsnumber', function (req, res) {
   res.redirect('/manager/students/1')
 })
 
+router.post('/sortby', function (req, res) {
+  const zzz = req.body.znach
+  const {acdec} = req.body
+
+    // eslint-disable-next-line no-ternary
+    const ad = acdec === 'ac'
+    ? 1
+    : -1
+
+  // eslint-disable-next-line no-undefined
+  if (zzz === undefined || zzz === '') {
+    sortby = {}
+  } else {
+      sortby = {[zzz]: ad}
+  }
+
+  console.log(sortby)
+  res.redirect('/manager/students/1')
+})
+
 router.get('/students/:np', async function (req, res) {
   try {
     const {np} = req.params
@@ -71,7 +92,7 @@ router.get('/students/:np', async function (req, res) {
     // eslint-disable-next-line newline-per-chained-call
   const students = await
   // eslint-disable-next-line newline-per-chained-call
-  Student.find().sort({zipcode: -1}).skip((np - 1) * numrows).limit(numrows)
+  Student.find().sort(sortby).skip((np - 1) * numrows).limit(numrows)
 
     // eslint-disable-next-line no-ternary
    const pagitems = numstudents % numrows

@@ -92,7 +92,7 @@ nav {
 
 .mainarea > h2 {
   text-align: center;
-  color: var(--color-grey);
+  color: var(--color-grey-text);
 }
 
 .person {
@@ -122,6 +122,10 @@ nav {
   outline: 1px solid var(--border-grey);
 }
 
+.rightside h6 {
+  font-weight: 700;
+}
+
 .iphone {
   display: flex;
 }
@@ -145,9 +149,9 @@ nav {
   background-color: var(--color-main);
 }
 
-.btrow {
+/* .btrow {
   margin-top: 20px;
-}
+} */
 
 .secondary-content {
   /* top: 30px!important; */
