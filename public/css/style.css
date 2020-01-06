@@ -179,3 +179,7 @@ nav {
 .collection .collection-item.avatar {
     min-height: 74px;
 }
+
+.rowshort {
+  margin-bottom: 5px;
+}

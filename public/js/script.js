@@ -1,4 +1,5 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable no-undef */
 /* eslint func-style: ["error", "declaration"] */
 /* eslint-disable no-unused-vars */
 /* eslint-disable max-params */
@@ -21,25 +22,15 @@ function primarycontact (
 	idprimaryph, idprimaryem, idstudentph, idstudentem
 	) {
 
-	// eslint-disable-next-line no-undef
 	const checkbx = document.getElementById(idcheck)
-	// eslint-disable-next-line no-undef
 	const parentblock = document.getElementById(idparents)
-	// eslint-disable-next-line no-undef
 	const parentfn = document.getElementById(idprimaryfn)
-	// eslint-disable-next-line no-undef
 	const parentsn = document.getElementById(idprimaryln)
-	// eslint-disable-next-line no-undef
 	const parentph = document.getElementById(idprimaryph)
-	// eslint-disable-next-line no-undef
 	const parentem = document.getElementById(idprimaryem)
-	// eslint-disable-next-line no-undef
 	const studentph = document.getElementById(idstudentph)
-	// eslint-disable-next-line no-undef
 	const studentem = document.getElementById(idstudentem)
-	// eslint-disable-next-line no-undef
 	const studentphtxt = document.querySelector('label[for=\'studentph\']')
-	// eslint-disable-next-line no-undef
 	const studentemtxt = document.querySelector('label[for=\'studentem\']')
 
 if (checkbx.checked) {
@@ -65,10 +56,14 @@ if (checkbx.checked) {
 }
 }
 
-  // eslint-disable-next-line no-undef
+	// select in forms initialization
   document.addEventListener('DOMContentLoaded', function () {
-    // eslint-disable-next-line no-undef
-    const elems = document.querySelectorAll('select');
-    // eslint-disable-next-line no-undef
-    const instances = M.FormSelect.init(elems, 'classes');
+    const elems = document.querySelectorAll('select')
+    const instances = M.FormSelect.init(elems, 'classes')
+  })
+
+  // modal window initialization
+  document.addEventListener('DOMContentLoaded', function () {
+    const elems = document.querySelectorAll('.modal')
+    const instances = M.Modal.init(elems, 'opacity')
   })

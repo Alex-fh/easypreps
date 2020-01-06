@@ -9,6 +9,7 @@ const Tutor = require('../models/tutorschema')
 // eslint-disable-next-line prefer-const
   let numrows = 5
   let sortby = {}
+  let findby = {}
 
 router.get('/', function (req, res) {
   res.render('manager', {
@@ -64,6 +65,20 @@ router.post('/rowsnumber', function (req, res) {
   res.redirect('/manager/students/1')
 })
 
+router.post('/findby', function (req, res) {
+  const {point} = req.body
+  const {value} = req.body
+
+  // eslint-disable-next-line no-undefined
+   if (point === undefined || point === '') {
+     findby = {}
+   } else {
+       findby = {[point]: value}
+   }
+
+  res.redirect('/manager/students/1')
+})
+
 router.post('/sortby', function (req, res) {
   const zzz = req.body.znach
   const {acdec} = req.body
@@ -79,8 +94,6 @@ router.post('/sortby', function (req, res) {
   } else {
       sortby = {[zzz]: ad}
   }
-
-  console.log(sortby)
   res.redirect('/manager/students/1')
 })
 
@@ -88,11 +101,11 @@ router.get('/students/:np', async function (req, res) {
   try {
     const {np} = req.params
 
-    const numstudents = await Student.find().countDocuments()
+    const numstudents = await Student.find(findby).countDocuments()
     // eslint-disable-next-line newline-per-chained-call
   const students = await
   // eslint-disable-next-line newline-per-chained-call
-  Student.find().sort(sortby).skip((np - 1) * numrows).limit(numrows)
+  Student.find(findby).sort(sortby).skip((np - 1) * numrows).limit(numrows)
 
     // eslint-disable-next-line no-ternary
    const pagitems = numstudents % numrows

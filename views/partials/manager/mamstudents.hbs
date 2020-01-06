@@ -6,11 +6,12 @@
 
   <div class="collection">
     {{#each students}}
-      <a class="collection-item avatar valign-wrapper"> 
+      <a class="collection-item avatar valign-wrapper modal-trigger" href="#modal1{{_id}}"> 
           <i class="material-icons circle" title="Open">child_care</i>
         <span class="title">{{firstname}} {{lastname}}</span>
         <p>{{zipcode}} <br>
-         {{phone}}
+         {{phone}} <br>
+         id - {{_id}}
       </p>
         {{!-- <a href="#!" class="secondary-content seccont">
           <i class="material-icons" title="Edit" onclick="alert('{{email}}')">edit</i>
@@ -19,6 +20,19 @@
           <i class="material-icons" title="Delete" onclick="alert('{{lastname}}')">delete_forever</i>
         </a> --}}
       </a>
+
+      <!-- Modal Structure -->
+      <div id="modal1{{_id}}" class="modal modal-fixed-footer">
+        <div class="modal-content">
+          <h4>The Student Info</h4>
+          <p>First name - {{firstname}}</p>
+          <p>Last name - {{lastname}}</p>
+          <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>        </div>
+      </div>
+
     {{/each}} 
   </div>
 
@@ -209,4 +223,7 @@
   {{/gte}}
 
 </div>
+
+
+
 </div>
