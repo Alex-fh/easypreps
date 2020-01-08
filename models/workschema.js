@@ -6,40 +6,33 @@ const mongoose = require('mongoose')
 
 const {Schema, model} = mongoose
 
-const TutorSchema = new Schema({
-  firstname: {
+const WorkSchema = new Schema({
+  student: {
+    _id: mongoose.Schema.Types.ObjectId
+  },
+  subject: {
     type: String,
     required: true,
     trim: true
   },
-  lastname: {
+  subsubject: {
     type: String,
     required: true,
     trim: true
   },
-  email: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  phone: {
+  enrollhours: {
     type: Number,
     required: true
   },
-  zipcode: {
-   type: String,
-   required: true,
-   trim: true
+  remainhours: {
+    type: Number,
+    required: true
   },
-  bio: {
-    type: String,
-    required: true,
-    trim: true
-   },
-   inputdate: {
+  inputdate: {
     type: Date,
     default: Date.now
-  }
+  },
+  tutor: [{_id: mongoose.Schema.Types.ObjectId}]
 })
 
-module.exports = model('Tutor', TutorSchema)
+module.exports = model('Work', WorkSchema)

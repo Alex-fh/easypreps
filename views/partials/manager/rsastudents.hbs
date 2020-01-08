@@ -8,7 +8,7 @@
     <form class="col s12" action="/manager/findby" method="POST">
       <div class="row rowshort">
       <div class="input-field col s12">
-        <select  name="point">
+        <select  name="point" onchange="showinput(this.value)">
           <optgroup label="Student contact">
             <option value="" selected>No choice (All students)</option>
             <option value="firstname">First name</option>
@@ -28,10 +28,10 @@
       </div>
       </div>
 
-      <div class="row rowshort">
+      <div id="finput" class="row rowshort" style="display: none;">
         <div class="input-field col s12">
           <input id="pval" type="text" name="value" class="validate">
-          <label for="pval">Value</label>
+          <label for="pval">Enter value for search</label>
         </div>
       </div>
 

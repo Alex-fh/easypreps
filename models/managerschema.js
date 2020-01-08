@@ -9,11 +9,13 @@ const {Schema, model} = mongoose
 const ManagerSchema = new Schema({
   firstname: {
     type: String,
-    required: true
+    required: true,
+    trim: true
   },
   lastname: {
     type: String,
-    required: true
+    required: true,
+    trim: true
   },
   phone: {
     type: Number,
@@ -21,15 +23,22 @@ const ManagerSchema = new Schema({
   },
   email: {
     type: String,
-    required: true
+    required: true,
+    trim: true
   },
   zipcode: {
-   type: Number,
-   required: true
+   type: String,
+   required: true,
+   trim: true
   },
   jobtitle: {
-    type: String
-   }
+    type: String,
+    trim: true
+   },
+   inputdate: {
+    type: Date,
+    default: Date.now
+  }
 })
 
 module.exports = model('Manager', ManagerSchema)

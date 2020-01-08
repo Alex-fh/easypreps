@@ -9,41 +9,53 @@ const {Schema, model} = mongoose
 const StudentSchema = new Schema({
   firstname: {
     type: String,
-    required: true
+    required: true,
+    trim: true
   },
   lastname: {
     type: String,
-    required: true
+    required: true,
+    trim: true
   },
   phone: {
     type: Number
   },
   email: {
-    type: String
+    type: String,
+    trim: true
   },
   zipcode: {
-   type: Number,
-   required: true
+   type: String,
+   required: true,
+   trim: true
   },
   address: {
     type: String,
-    required: true
+    required: true,
+    trim: true
+  },
+  inputdate: {
+    type: Date,
+    default: Date.now
   },
   isteen: {
     type: String,
     default: 'off'
   },
   pfirstname: {
-    type: String
+    type: String,
+    trim: true
   },
   plastname: {
-    type: String
+    type: String,
+    trim: true
   },
   pphone: {
     type: Number
   },
   pemail: {
-    type: String
+    type: String,
+    trim: true
   }
 
   /*
@@ -52,25 +64,6 @@ const StudentSchema = new Schema({
    *   required: true
    *  }
    */
-
- /*
-  * isTeen: {
-  *   type: Boolean,
-  *   default: false
-  * },
-  * pfirstname: {
-  *   type: String
-  * },
-  * plastname: {
-  *   type: String
-  * },
-  * pemail: {
-  *   type: String
-  * },
-  * pphone: {
-  *   type: [Number]
-  * }
-  */
 
 })
 

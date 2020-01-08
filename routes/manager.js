@@ -10,6 +10,8 @@ const Tutor = require('../models/tutorschema')
   let numrows = 5
   let sortby = {}
   let findby = {}
+  // eslint-disable-next-line no-unused-vars
+  let fb = false
 
 router.get('/', function (req, res) {
   res.render('manager', {
@@ -36,10 +38,10 @@ router.get('/newtutor', function (req, res) {
   })
 })
 
-router.get('/newjob', function (req, res) {
+router.get('/newwork', function (req, res) {
   res.render('manager', {
     isManager: true,
-    isNewjob: true,
+    isNewwork: true,
     title: 'Manager'
   })
 })
@@ -72,10 +74,11 @@ router.post('/findby', function (req, res) {
   // eslint-disable-next-line no-undefined
    if (point === undefined || point === '') {
      findby = {}
+     fb = false
    } else {
        findby = {[point]: value}
+       fb = true
    }
-
   res.redirect('/manager/students/1')
 })
 
