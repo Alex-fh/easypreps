@@ -3,7 +3,6 @@
 
 {{> crmname}}
 
-
     <div class="allarea">
 
 {{> crm/menucrm}}
@@ -12,21 +11,23 @@
 
 {{#if isAbout}}
 {{> crm/macabout}}
+{{> rightside}}
 {{/if}}
 
 {{#if isLogin}}
 {{> crm/maclogin}}
+{{> rightside}}
 {{/if}}
 
 {{#if isRegister}}
 {{> crm/macregister}}
+{{> rightside}}
 {{/if}}
 
 {{#if isMessage}}
 {{> crm/macmessage}}
-{{/if}}
-
 {{> rightside}}
+{{/if}}
 
     </div>
     

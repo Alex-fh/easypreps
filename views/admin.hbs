@@ -2,7 +2,6 @@
 
 {{> crmname}}
 
-
     <div class="allarea">
 
 {{> admin/menuadmin}}
@@ -11,21 +10,23 @@
 
 {{#if isProfile}}
 {{> admin/maaadmin}}
+{{> rightside}}
 {{/if}}
 
 {{#if isNewmanager}}
 {{> admin/maanewmanager}}
+{{> rightside}}
 {{/if}}
 
 {{#if isManagers}}
 {{> admin/maamanagers}}
+{{> rightside}}
 {{/if}}
 
 {{#if isDatacheck}}
 {{> admin/maadatacheck}}
-{{/if}}
-
 {{> rightside}}
+{{/if}}
 
     </div>
     

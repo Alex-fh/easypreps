@@ -2,7 +2,6 @@
 
 {{> crmname}}
 
-
     <div class="allarea">
 
 {{> tutor/menututor}}
@@ -11,25 +10,28 @@
 
 {{#if isProfile}}
 {{> tutor/mattutor}}
+{{> rightside}}
 {{/if}}
 
 {{#if isGetjob}}
 {{> tutor/matgetjob}}
+{{> rightside}}
 {{/if}}
 
 {{#if isPlanmeeting}}
 {{> tutor/matplanmeeting}}
+{{> rightside}}
 {{/if}}
 
 {{#if isWritereport}}
 {{> tutor/matwritereport}}
+{{> rightside}}
 {{/if}}
 
 {{#if isSummary}}
 {{> tutor/matsummary}}
-{{/if}}
-
 {{> rightside}}
+{{/if}}
 
     </div>
     

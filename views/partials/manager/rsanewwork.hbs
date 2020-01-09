@@ -1,0 +1,54 @@
+<div class="rightside">
+
+{{!-- Find student --}}
+
+<div class="border hoverable">
+  <h6>Find student</h6>
+  <div class="row rowshort">
+    <form class="col s12" action="/manager/findstudent" method="POST">
+      <div class="row rowshort">
+      <div class="input-field col s12">
+        <select  name="point">
+          <optgroup label="Student contact">
+            <option value="firstname">First name</option>
+            <option value="lastname">Last name</option>
+            <option value="phone">Phone</option>
+            <option value="email" selected>E-mail</option>
+            <option value="zipcode">Zip code</option>
+          </optgroup>
+          <optgroup label="Primary contact">
+            <option value="pfirstname">Primary first name</option>
+            <option value="plastname">Primary last name</option>
+            <option value="pphone">Primary phone</option>
+            <option value="pemail">Primary e-mail</option>
+          </optgroup>
+        </select>
+        <label>Choose an option</label>
+      </div>
+      </div>
+
+      <div id="finput" class="row rowshort">
+        <div class="input-field col s12">
+          <input id="pval" type="text" name="value" class="validate">
+          <label for="pval">Enter value for search</label>
+        </div>
+      </div>
+
+      <button class="btn-small waves-effect waves-light" type="submit" name="action btn">
+        Submit
+        <i class="material-icons right">send</i>
+      </button>
+  </form>
+
+  </div>
+</div>
+
+{{!-- Error --}}
+
+{{#if wrong}}
+<div id="wrongchoice" class="border">
+  <h1>Wrong Choice</h1>
+</div>
+{{/if}}
+
+</div>

@@ -38,6 +38,37 @@ router.get('/newtutor', function (req, res) {
   })
 })
 
+// eslint-disable-next-line max-statements
+router.post('/findstudent', async function (req, res) {
+  const {point} = req.body
+  const {value} = req.body
+  let wrong = true
+  let idd = 0
+
+  try {
+  const sample = await Student.find({[point]: value})
+
+  // eslint-disable-next-line no-undefined
+  if (value === '' || value === undefined || sample.length !== 1) {
+    wrong = true
+  } else {
+    wrong = false
+    idd = sample[0].id
+  }
+
+  res.render('manager', {
+    isManager: true,
+    isNewwork: true,
+    title: 'Manager',
+    wrong,
+    // eslint-disable-next-line sort-keys
+    idd
+  })
+} catch (error) {
+  console.log(error)
+}
+})
+
 router.get('/newwork', function (req, res) {
   res.render('manager', {
     isManager: true,

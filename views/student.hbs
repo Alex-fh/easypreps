@@ -2,7 +2,6 @@
 
 {{> crmname}}
 
-
     <div class="allarea">
 
 {{> student/menustudent}}
@@ -11,21 +10,23 @@
 
 {{#if isProfile}}
 {{> student/masstudent}}
+{{> rightside}}
 {{/if}}
 
 {{#if isSendrequest}}
 {{> student/massendrequest}}
+{{> rightside}}
 {{/if}}
 
 {{#if isCalendar}}
 {{> student/mascalendar}}
+{{> rightside}}
 {{/if}}
 
 {{#if isSummary}}
 {{> student/massummary}}
-{{/if}}
-
 {{> rightside}}
+{{/if}}
 
     </div>
     

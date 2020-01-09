@@ -11,47 +11,51 @@
 
       {{#if isProfile}}
       {{> manager/mammanager}}
+      {{> rightside}}
       {{/if}}
 
       {{#if isNewstudent}}
       {{> manager/mamnewstudent}}
+      {{> rightside}}
       {{/if}}
 
       {{#if isNewtutor}}
       {{> manager/mamnewtutor}}
+      {{> rightside}}
       {{/if}}
 
       {{#if isNewwork}}
       {{> manager/mamnewwork}}
+      {{> manager/rsanewwork}}
       {{/if}}
 
       {{#if isMatch}}
       {{> manager/mammatch}}
+      {{> rightside}}
       {{/if}}
 
       {{#if isCheck}}
       {{> manager/mamcheck}}
+      {{> rightside}}
       {{/if}}
 
       {{#if isStudents}}
       {{> manager/mamstudents}}
+      {{> manager/rsastudents}}
       {{/if}}
 
       {{#if isTutors}}
       {{> manager/mamtutors}}
+      {{> rightside}}
       {{/if}}
 
       {{#if isCalendars}}
       {{> manager/mamcalendars}}
+      {{> rightside}}
       {{/if}}
 
       {{#if isReports}}
       {{> manager/mamreports}}
-      {{/if}}
-
-      {{#if isStudents}}
-      {{> manager/rsastudents}}
-      {{else}}
       {{> rightside}}
       {{/if}}
 
