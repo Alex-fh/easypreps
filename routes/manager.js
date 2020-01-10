@@ -22,7 +22,6 @@ router.get('/', function (req, res) {
 })
 
 router.get('/newstudent', function (req, res) {
-
   res.render('manager', {
     isManager: true,
     isNewstudent: true,
@@ -43,17 +42,34 @@ router.post('/findstudent', async function (req, res) {
   const {point} = req.body
   const {value} = req.body
   let wrong = true
-  let idd = 0
+  let errval = ''
 
   try {
-  const sample = await Student.find({[point]: value})
+    // eslint-disable-next-line no-undefined
+    if (value === '' || value === undefined) {
+      wrong = true
+      errval = 'Search value not defined'
 
-  // eslint-disable-next-line no-undefined
-  if (value === '' || value === undefined || sample.length !== 1) {
+      res.render('manager', {
+        isManager: true,
+        isNewwork: true,
+        title: 'Manager',
+        wrong,
+        // eslint-disable-next-line sort-keys
+        errval
+      })
+
+      return
+    }
+
+  const sample = await Student.find({[point]: value})
+  const el = sample.length
+
+  if (el < 1 || el > 1) {
     wrong = true
+    errval = `The number of students in the sample is ${el}`
   } else {
     wrong = false
-    idd = sample[0].id
   }
 
   res.render('manager', {
@@ -62,7 +78,8 @@ router.post('/findstudent', async function (req, res) {
     title: 'Manager',
     wrong,
     // eslint-disable-next-line sort-keys
-    idd
+    errval,
+    sample: sample[0]
   })
 } catch (error) {
   console.log(error)

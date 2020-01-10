@@ -46,8 +46,10 @@
 {{!-- Error --}}
 
 {{#if wrong}}
-<div id="wrongchoice" class="border">
-  <h1>Wrong Choice</h1>
+<div id="wrongchoice" class="border" style="outline: 1px solid red;">
+  <h5>Incorrect Choice</h5>
+  {{errval}}
+  <p>Try again</p>
 </div>
 {{/if}}
 

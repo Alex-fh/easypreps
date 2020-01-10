@@ -1,7 +1,6 @@
 <div class="mainarea">
 
 <h2>New work</h2>
-{{idd}}
 <div class="border">
 
   <div class="row">
@@ -9,13 +8,39 @@
 
       <div class="row">
         <div class="input-field col s6">
-          <input id="first_name" type="text" class="validate">
+          <input disabled id="first_name" type="text" class="validate" value={{sample.firstname}}>
           <label for="first_name">First Name</label>
           <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
+          <input disabled id="last_name" type="text" class="validate" value={{sample.lastname}}>
           <label for="last_name">Last Name</label>
+          <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <input disabled id="e_mail" type="email" class="validate" value={{sample.email}}>
+          <label for="e-mail">E-mail</label>
+          <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+        <div class="input-field col s6">
+          <input disabled id="phone" type="number" class="validate" value={{sample.phone}}>
+          <label for="phone">Phone</label>
+          <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <input disabled id="zipcode" type="text" class="validate" value={{sample.zipcode}}>
+          <label for="zipcode">Zip code</label>
+          <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+        <div class="input-field col s6">
+          <input disabled id="addr" type="text" class="validate" value="kqjhdkqjhdq q q qewjh qewjh">
+          <label for="addr">Address</label>
           <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
       </div>
