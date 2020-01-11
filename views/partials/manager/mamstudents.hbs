@@ -5,34 +5,45 @@
 <div class="border">
 
   <div class="collection">
-    {{#each students}}
-      <a class="collection-item avatar valign-wrapper modal-trigger" href="#modal1{{_id}}"> 
-          <i class="material-icons circle" title="Open">child_care</i>
-        <span class="title">{{firstname}} {{lastname}}</span>
-        <p>{{zipcode}} <br>
-         {{phone}} <br>
-         id - {{_id}}
-      </p>
 
-      
-        {{!-- <a href="#!" class="secondary-content seccont">
-          <i class="material-icons" title="Edit" onclick="alert('{{email}}')">edit</i>
-        </a>
-        <a href="#!" class="secondary-content">
-          <i class="material-icons" title="Delete" onclick="alert('{{lastname}}')">delete_forever</i>
-        </a> --}}
+
+    {{#each students}}
+    <div  style="position: relative;">
+
+      <div style="position: absolute; top: 25px; right: 116px;">
+        <a class="waves-effect waves-light btn-small">&nbsp;&nbsp;Edit&nbsp;&nbsp;</a>
+      </div>
+      <div style="position: absolute; top: 25px; right: 30px;">
+        <a class="waves-effect waves-light btn-small">Delete</a>
+      </div>
+
+      <a class="collection-item avatar valign-wrapper modal-trigger" href="#modal1{{_id}}"> 
+        <i class="material-icons circle" title="Open">child_care</i>
+        <span class="title">{{firstname}} {{lastname}}</span>
+        <p>{{phone}} &nbsp; {{email}}</p>
+        <p>{{zipcode}} &nbsp; {{address}}</p>
       </a>
+    </div>
 
       <!-- Modal Structure -->
       <div id="modal1{{_id}}" class="modal modal-fixed-footer">
         <div class="modal-content">
-          <h4>The Student Info</h4>
+          <h5>Primary Info</h5>
+          <p>Primary First name - {{pfirstname}}</p>
+          <p>Primary Last name - {{plastname}}</p>
+          <p>Primary E-mail - {{pemail}}</p>
+          <p>Primary Phone - {{pphone}}</p>
+          <h5>The Student Info</h5>
           <p>First name - {{firstname}}</p>
           <p>Last name - {{lastname}}</p>
+          <p>E-mail - {{email}}</p>
+          <p>Phone - {{phone}}</p>
           <p>Zip code - {{zipcode}} </p>
+          <p>Address - {{address}} </p>
         </div>
-        <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>        </div>
+          <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+          </div>
       </div>
 
     {{/each}} 
@@ -225,7 +236,5 @@
   {{/gte}}
 
 </div>
-
-
 
 </div>
