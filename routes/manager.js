@@ -61,7 +61,6 @@ router.post('/findstudent', async function (req, res) {
 
       return
     }
-
   const sample = await Student.find({[point]: value})
   const el = sample.length
 
@@ -154,14 +153,14 @@ router.get('/students/:np', async function (req, res) {
 
     const numstudents = await Student.find(findby).countDocuments()
     // eslint-disable-next-line newline-per-chained-call
-  const students = await
-  // eslint-disable-next-line newline-per-chained-call
-  Student.find(findby).sort(sortby).skip((np - 1) * numrows).limit(numrows)
+    const students = await
+    // eslint-disable-next-line newline-per-chained-call
+    Student.find(findby).sort(sortby).skip((np - 1) * numrows).limit(numrows)
 
     // eslint-disable-next-line no-ternary
-   const pagitems = numstudents % numrows
-   // eslint-disable-next-line multiline-ternary
-   ? Math.ceil(numstudents / numrows) : numstudents / numrows
+    const pagitems = numstudents % numrows
+    // eslint-disable-next-line multiline-ternary
+    ? Math.ceil(numstudents / numrows) : numstudents / numrows
 
       res.render('manager', {
         isManager: true,
@@ -207,8 +206,6 @@ router.get('/reports', function (req, res) {
 })
 
 router.post('/addstudent', async function (req, res) {
-  console.log(req.body)
-
   const student = new Student({
     firstname: req.body.studentfirstname,
     lastname: req.body.studentlastname,
@@ -226,14 +223,26 @@ router.post('/addstudent', async function (req, res) {
     pemail: req.body.primaryemail
   })
 
+  try {
   await student.save()
-
   res.redirect('/manager/newstudent')
+  } catch (error) {
+    console.log(error)
+  }
+})
+
+router.get('/delstudent/:id', async function (req, res) {
+  const {id} = req.params
+
+  try {
+    await Student.deleteOne({_id: id})
+    res.redirect('/manager/students/1')
+    } catch (error) {
+      console.log(error)
+    }
 })
 
 router.post('/addtutor', async function (req, res) {
-  console.log(req.body)
-
   const tutor = new Tutor({
     firstname: req.body.tutorfirstname,
     lastname: req.body.tutorlastname,
@@ -245,9 +254,12 @@ router.post('/addtutor', async function (req, res) {
     bio: req.body.tutorbio
   })
 
+  try {
   await tutor.save()
-
   res.redirect('/manager/newtutor')
+  } catch (error) {
+    console.log(error)
+  }
 })
 
 module.exports = router
