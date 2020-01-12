@@ -8,7 +8,7 @@ router.get('/', function (req, res) {
   res.render('student', {
     isProfile: true,
     isStudent: true,
-    title: 'Student'
+    title: 'Profile'
   })
 })
 
@@ -16,7 +16,7 @@ router.get('/sendrequest', function (req, res) {
   res.render('student', {
     isSendrequest: true,
     isStudent: true,
-    title: 'Student'
+    title: 'Send Request'
   })
 })
 
@@ -24,7 +24,7 @@ router.get('/calendar', function (req, res) {
   res.render('student', {
     isCalendar: true,
     isStudent: true,
-    title: 'Student'
+    title: 'Calendar'
   })
 })
 
@@ -32,7 +32,7 @@ router.get('/summary', function (req, res) {
   res.render('student', {
     isStudent: true,
     isSummary: true,
-    title: 'Student'
+    title: 'Summary'
   })
 })
 

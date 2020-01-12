@@ -9,11 +9,13 @@
 
     <div class="wraprow"style="position: relative;">
 
+      {{!-- Button Edit student --}}
       <div style="position: absolute; top: 25px; right: 116px;">
-        <a class="waves-effect waves-light btn-small">
+        <a class="waves-effect waves-light btn-small" href="/manager/editstudent/{{_id}}">
           &nbsp;&nbsp;Edit&nbsp;&nbsp;
         </a>
       </div>
+      {{!-- Button Delete student --}}      
       <div style="position: absolute; top: 25px; right: 30px;">
         <a class="waves-effect waves-light btn-small modal-trigger" href="#modal2{{_id}}">
           Delete

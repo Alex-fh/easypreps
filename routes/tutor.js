@@ -8,15 +8,15 @@ router.get('/', function (req, res) {
   res.render('tutor', {
     isProfile: true,
     isTutor: true,
-    title: 'Tutor'
+    title: 'Profile'
   })
 })
 
-router.get('/getjob', function (req, res) {
+router.get('/getwork', function (req, res) {
   res.render('tutor', {
-    isGetjob: true,
+    isGetwork: true,
     isTutor: true,
-    title: 'Tutor'
+    title: 'Get Work'
   })
 })
 
@@ -24,7 +24,7 @@ router.get('/planmeeting', function (req, res) {
   res.render('tutor', {
     isPlanmeeting: true,
     isTutor: true,
-    title: 'Tutor'
+    title: 'Plan Meeting'
   })
 })
 
@@ -32,7 +32,7 @@ router.get('/writereport', function (req, res) {
   res.render('tutor', {
     isTutor: true,
     isWritereport: true,
-    title: 'Tutor'
+    title: 'Write Report'
   })
 })
 
@@ -40,7 +40,7 @@ router.get('/summary', function (req, res) {
   res.render('tutor', {
     isSummary: true,
     isTutor: true,
-    title: 'Tutor'
+    title: 'Summary'
   })
 })
 

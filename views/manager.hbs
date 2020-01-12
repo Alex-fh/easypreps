@@ -19,6 +19,11 @@
       {{> rightside}}
       {{/if}}
 
+      {{#if isEditstudent}}
+      {{> manager/mameditstudent}}
+      {{> rightside}}
+      {{/if}}
+
       {{#if isNewtutor}}
       {{> manager/mamnewtutor}}
       {{> rightside}}

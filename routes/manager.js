@@ -25,7 +25,7 @@ router.get('/newstudent', function (req, res) {
   res.render('manager', {
     isManager: true,
     isNewstudent: true,
-    title: 'Manager'
+    title: 'New Student'
   })
 })
 
@@ -33,7 +33,7 @@ router.get('/newtutor', function (req, res) {
   res.render('manager', {
     isManager: true,
     isNewtutor: true,
-    title: 'Manager'
+    title: 'New Tutor'
   })
 })
 
@@ -53,7 +53,7 @@ router.post('/findstudent', async function (req, res) {
       res.render('manager', {
         isManager: true,
         isNewwork: true,
-        title: 'Manager',
+        title: 'New Work',
         wrong,
         // eslint-disable-next-line sort-keys
         errval
@@ -74,7 +74,7 @@ router.post('/findstudent', async function (req, res) {
   res.render('manager', {
     isManager: true,
     isNewwork: true,
-    title: 'Manager',
+    title: 'New Work',
     wrong,
     // eslint-disable-next-line sort-keys
     errval,
@@ -89,7 +89,7 @@ router.get('/newwork', function (req, res) {
   res.render('manager', {
     isManager: true,
     isNewwork: true,
-    title: 'Manager'
+    title: 'New Work'
   })
 })
 
@@ -97,7 +97,7 @@ router.get('/match', function (req, res) {
   res.render('manager', {
     isManager: true,
     isMatch: true,
-    title: 'Manager'
+    title: 'Match St&Tut'
   })
 })
 
@@ -105,7 +105,7 @@ router.get('/check', function (req, res) {
   res.render('manager', {
     isCheck: true,
     isManager: true,
-    title: 'Manager'
+    title: 'Check Report'
   })
 })
 
@@ -165,7 +165,7 @@ router.get('/students/:np', async function (req, res) {
       res.render('manager', {
         isManager: true,
         isStudents: true,
-        title: 'Manager',
+        title: 'Students',
         // eslint-disable-next-line sort-keys
         students,
         // eslint-disable-next-line sort-keys
@@ -185,7 +185,7 @@ router.get('/tutors', function (req, res) {
   res.render('manager', {
     isManager: true,
     isTutors: true,
-    title: 'Manager'
+    title: 'Tutors'
   })
 })
 
@@ -193,7 +193,7 @@ router.get('/calendars', function (req, res) {
   res.render('manager', {
     isCalendars: true,
     isManager: true,
-    title: 'Manager'
+    title: 'Calendars'
   })
 })
 
@@ -201,7 +201,7 @@ router.get('/reports', function (req, res) {
   res.render('manager', {
     isManager: true,
     isReports: true,
-    title: 'Manager'
+    title: 'Reports'
   })
 })
 
@@ -231,6 +231,34 @@ router.post('/addstudent', async function (req, res) {
   }
 })
 
+router.post('/updatestudent', async function (req, res) {
+
+   const student = {
+     firstname: req.body.studentfirstname,
+     lastname: req.body.studentlastname,
+     phone: req.body.studentphone,
+     // eslint-disable-next-line sort-keys
+     email: req.body.studentemail,
+     zipcode: req.body.studentzip,
+     // eslint-disable-next-line sort-keys
+     address: req.body.studentaddress,
+     isteen: req.body.studentisteen,
+     pfirstname: req.body.primaryfirstname,
+     plastname: req.body.primarylastname,
+     pphone: req.body.primaryphone,
+     // eslint-disable-next-line sort-keys
+     pemail: req.body.primaryemail
+   }
+
+  try {
+    // eslint-disable-next-line max-len
+    await Student.findOneAndUpdate({_id: req.body.id}, student, {'useFindAndModify': false})
+    res.redirect('/manager/students/1')
+    } catch (error) {
+      console.log(error)
+    }
+})
+
 router.get('/delstudent/:id', async function (req, res) {
   const {id} = req.params
 
@@ -240,6 +268,25 @@ router.get('/delstudent/:id', async function (req, res) {
     } catch (error) {
       console.log(error)
     }
+})
+
+router.get('/editstudent/:id', async function (req, res) {
+  const {id} = req.params
+
+  try {
+  const student = await Student.findOne({_id: id})
+
+  res.render('manager', {
+    isManager: true,
+    // eslint-disable-next-line sort-keys
+    isEditstudent: true,
+    title: 'Edit student',
+    // eslint-disable-next-line sort-keys
+    student
+  })
+  } catch (error) {
+    console.log(error)
+  }
 })
 
 router.post('/addtutor', async function (req, res) {

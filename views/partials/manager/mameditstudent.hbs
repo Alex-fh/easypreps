@@ -1,20 +1,22 @@
 <div class="mainarea">
 
-<h2>New student</h2>
+<h2>Edit student</h2>
 
 <div class="border">
 
   <div class="row">
-    <form class="col s12" action="/manager/addstudent" method="POST">
+    <form class="col s12" action="/manager/updatestudent" method="POST">
  
+        <input type="hidden" name="id" value="{{student.id}}">
+
       <div class="row">
         <div class="input-field col s6">
-          <input id="studentfn" type="text" name="studentfirstname" class="validate" required>
+          <input id="studentfn" type="text" name="studentfirstname" class="validate" required value="{{student.firstname}}">
           <label for="studentfn">First Name*</label>
           <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field col s6">
-          <input id="studentln" type="text" name="studentlastname" class="validate" required>
+          <input id="studentln" type="text" name="studentlastname" class="validate" required value="{{student.lastname}}">
           <label for="studentln">Last Name*</label>
           <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
@@ -23,12 +25,12 @@
       <div class="row iphone">
         <i class="small material-icons">add</i>
         <div class="input-field col s5">
-          <input id="studentph" type="number" name="studentphone" class="validate" required>
+          <input id="studentph" type="number" name="studentphone" class="validate" required value="{{student.phone}}">
           <label for="studentph">Phone*</label>
           <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field col s6">
-          <input id="studentem" type="email" name="studentemail" class="validate" required>
+          <input id="studentem" type="email" name="studentemail" class="validate" required value="{{student.email}}">
           <label for="studentem">Email*</label>
           <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
@@ -36,7 +38,7 @@
 
       <div class="row">
         <div class="input-field col s12">
-          <input id="studentzip" type="text" name="studentzip" class="validate" required>
+          <input id="studentzip" type="text" name="studentzip" class="validate" required value="{{student.zipcode}}">
           <label for="studentzip">Zip code*</label>
           <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
@@ -44,7 +46,7 @@
 
       <div class="row">
         <div class="input-field col s12">
-          <input id="studentad" type="text" name="studentaddress" class="validate" required>
+          <input id="studentad" type="text" name="studentaddress" class="validate" required value="{{student.address}}">
           <label for="studentad">Home address*</label>
           <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
@@ -57,8 +59,13 @@
           <div class="switch">
             <label>
               No
+{{#eq student.isteen 'on'}}
+           <script defer src="/js/showprimary.js"></script>
+            <input type="checkbox" id="cb" name="studentisteen" checked>
+ {{else}}
               <input type="checkbox" id="cb" name="studentisteen" 
               onchange ='primarycontact("cb","pcontact","primaryfn","primaryln","primaryph","primaryem","studentph","studentem")'>
+{{/eq}}
               <span class="lever"></span>
               Yes
             </label>
@@ -69,12 +76,12 @@
       <div id="pcontact">
         <div class="row">
           <div class="input-field col s6">
-            <input id="primaryfn" type="text" name="primaryfirstname" class="validate">
+            <input id="primaryfn" type="text" name="primaryfirstname" class="validate" value="{{student.pfirstname}}">
             <label for="primaryfn">Primary first name*</label>
             <span class="helper-text" data-error="wrong" data-success="right"></span>
           </div>
           <div class="input-field col s6">
-            <input id="primaryln" type="text" name="primarylastname" class="validate">
+            <input id="primaryln" type="text" name="primarylastname" class="validate" value="{{student.plastname}}">
             <label for="primaryln">Primary last name*</label>
             <span class="helper-text" data-error="wrong" data-success="right"></span>
           </div>
@@ -83,12 +90,12 @@
         <div class="row iphone">
           <i class="small material-icons">add</i>
           <div class="input-field col s5">
-            <input id="primaryph" type="number" name="primaryphone" class="validate">
+            <input id="primaryph" type="number" name="primaryphone" class="validate" value="{{student.pphone}}">
             <label for="primaryph">Primary phone*</label>
             <span class="helper-text" data-error="wrong" data-success="right"></span>
           </div>
           <div class="input-field col s6">
-            <input id="primaryem" type="email" name="primaryemail" class="validate">
+            <input id="primaryem" type="email" name="primaryemail" class="validate" value="{{student.pemail}}">
             <label for="primaryem">Primary email*</label>
             <span class="helper-text" data-error="wrong" data-success="right"></span>
           </div>

@@ -8,7 +8,7 @@ router.get('/', function (req, res) {
   res.render('crm', {
     isAbout: true,
     isCrm: true,
-    title: 'CRM'
+    title: 'About'
   })
 })
 
@@ -16,7 +16,7 @@ router.get('/login', function (req, res) {
   res.render('crm', {
     isCrm: true,
     isLogin: true,
-    title: 'CRM'
+    title: 'Login'
   })
 })
 
@@ -24,7 +24,7 @@ router.get('/register', function (req, res) {
   res.render('crm', {
     isCrm: true,
     isRegister: true,
-    title: 'CRM'
+    title: 'Register'
   })
 })
 
@@ -32,7 +32,7 @@ router.get('/message', function (req, res) {
   res.render('crm', {
     isCrm: true,
     isMessage: true,
-    title: 'CRM'
+    title: 'Message'
   })
 })
 

@@ -9,7 +9,7 @@ router.get('/', function (req, res) {
   res.render('admin', {
     isAdmin: true,
     isProfile: true,
-    title: 'Admin'
+    title: 'Profile'
   })
 })
 
@@ -17,7 +17,7 @@ router.get('/newmanager', function (req, res) {
   res.render('admin', {
     isAdmin: true,
     isNewmanager: true,
-    title: 'Admin'
+    title: 'New Manager'
   })
 })
 
@@ -25,7 +25,7 @@ router.get('/managers', function (req, res) {
   res.render('admin', {
     isAdmin: true,
     isManagers: true,
-    title: 'Admin'
+    title: 'Managers'
   })
 })
 
@@ -33,7 +33,7 @@ router.get('/datacheck', function (req, res) {
   res.render('admin', {
     isAdmin: true,
     isDatacheck: true,
-    title: 'Admin'
+    title: 'Data Check'
   })
 })
 
